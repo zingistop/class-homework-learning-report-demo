@@ -1,0 +1,48 @@
+[hidden] { display: none !important; }
+
+.school-writing-v4 .v4-title strong {
+  max-width: min(520px, 50vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.school-writing-v4 .v4-source-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.school-writing-v4 .v4-data-ledger {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.school-writing-v4 .v4-report-sections {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.school-writing-v4 .v4-report-frame {
+  width: 100%;
+  min-height: 100%;
+  border: 0;
+  background: #e9eeeb;
+}
+
+.school-writing-v4 .report-page,
+.school-writing-v4 #reportDocument {
+  height: 100%;
+}
+
+.school-writing-v4 .v4-plan-column h4 {
+  min-height: 42px;
+}
+
+@media (max-width: 760px) {
+  .school-writing-v4 .v4-source-grid,
+  .school-writing-v4 .v4-data-ledger {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .school-writing-v4 .v4-title strong { max-width: 58vw; }
+  .school-writing-v4 .v4-report-sections { grid-template-columns: 1fr; }
+}

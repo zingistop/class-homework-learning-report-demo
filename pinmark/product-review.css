@@ -1,0 +1,33 @@
+/* PinMark product-review skin. Keep these defaults consistent across demos. */
+:root{--pm-orange:#ed9a36;--pm-ink:#183d30;--pm-muted:#586d62;--pm-line:#e1e9e4;--pm-selected:#fff8ed;--pm-selected-ring:#f8d6a4;--pm-panel-width:370px}
+.pm-layout{display:grid;grid-template-columns:minmax(0,1fr) var(--pm-panel-width);height:calc(100vh - 62px);min-height:0}
+.pm-layout>iframe{width:100%;height:100%;border:0;background:white}
+.pm-layout.pm-notes-hidden{grid-template-columns:minmax(0,1fr)}
+.pm-layout.pm-notes-hidden>.pm-panel{display:none}
+.pm-panel{box-sizing:border-box;overflow:auto;background:white;border-left:1px solid #dce7e1;padding:24px;color:var(--pm-ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.pm-panel.pm-floating{position:fixed;right:0;top:62px;bottom:0;width:var(--pm-panel-width);z-index:2147483644}
+.pm-panel[hidden]{display:none!important}
+.pm-panel h2{margin:0;font-size:20px;font-weight:700}
+.pm-panel .pm-intro{color:#72867b;font-size:12px;margin:10px 0 16px}
+.pm-note{box-sizing:border-box;padding:17px 14px;border:1px solid var(--pm-line);border-radius:12px;margin:12px 0;background:white;scroll-margin:20px}
+.pm-note[data-active=true]{border-color:#e9a34d;background:var(--pm-selected);box-shadow:0 0 0 2px var(--pm-selected-ring)}
+.pm-note h3{display:flex;align-items:center;gap:10px;font-size:15px;margin:0 0 10px;color:var(--pm-ink);line-height:1.6}
+.pm-note ul{margin:0;padding-left:18px;font-size:13px;color:var(--pm-muted)}
+.pm-note li{margin:6px 0;overflow-wrap:anywhere}
+[data-pinmark-ui] button{cursor:pointer;font:inherit;border:1px solid #d8e5de;background:white;border-radius:8px;padding:7px 12px;color:#315847}
+[data-pinmark-ui] button:hover{background:#f5f8f6}
+[data-pinmark-ui] button:focus-visible{outline:2px solid var(--pm-orange);outline-offset:3px}
+[data-pinmark-ui] .pm-number,[data-pinmark-ui] .pm-number:hover,[data-pinmark-ui] .pm-number:focus{box-sizing:border-box;display:inline-grid;place-items:center;flex:none;min-width:27px;height:27px;padding:0 5px;border:0;border-radius:50%;background:var(--pm-orange);color:white;font:400 13px/1 sans-serif}
+.pm-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.pm-actions button{font-size:12px;padding:4px 8px}
+.pm-controls{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pm-controls button[aria-pressed=true]{border-color:var(--pm-orange);box-shadow:0 0 0 2px #fbe4c5}
+.pm-status{font:12px/1.5 sans-serif;max-width:250px;color:#71572e}
+.pm-review-list{border-top:1px solid var(--pm-line);padding-top:18px;margin-top:22px}
+#pm-editor{box-sizing:border-box;position:fixed;z-index:2147483647;width:340px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow:auto;padding:16px;background:white;border:2px solid var(--pm-orange);border-radius:12px;box-shadow:0 12px 44px #0004;color:var(--pm-ink);font:14px/1.5 sans-serif}
+#pm-editor[hidden],#pm-editor [hidden]{display:none!important}
+#pm-editor label{display:block;margin:8px 0}
+#pm-editor input,#pm-editor textarea{box-sizing:border-box;width:100%;padding:8px;border:1px solid #ccd4cf;border-radius:6px;font:inherit}
+#pm-editor textarea{height:125px;resize:vertical}
+#pm-editor .pm-error{color:#aa3424;min-height:20px}
+@media(max-width:1000px){:root{--pm-panel-width:290px}.pm-panel{padding:14px}}
