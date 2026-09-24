@@ -2433,9 +2433,12 @@ body.is-learning-map-fullscreen{overflow:hidden}
 .integrated-student-search-placeholder{min-width:0;flex:1;color:#a3a9b2;font-size:14px}
 .integrated-student-search-icon{position:relative;width:16px;height:16px;margin-left:8px;border:2px solid #1d2129;border-radius:50%;box-sizing:border-box;flex:0 0 auto}
 .integrated-student-search-icon::after{content:"";position:absolute;right:-5px;bottom:-3px;width:7px;height:2px;border-radius:1px;background:#1d2129;transform:rotate(45deg);transform-origin:left center}
-.integrated-student-head-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border:1px solid #c9cdd4;border-radius:8px;background:#fff;color:#1d2129;font-size:14px;font-weight:600;white-space:nowrap;cursor:default;user-select:none}
-.integrated-student-head-action svg{width:18px;height:18px;flex:0 0 auto}
-.integrated-student-head-action:hover{border-color:#86909c;background:#f7f8fa}
+.integrated-student-more-wrap{position:relative;display:inline-flex}
+.integrated-student-more{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:1px solid #d9dde3;border-radius:8px;background:#fff;color:#1d2129;font-size:18px;letter-spacing:2px;cursor:pointer;user-select:none}
+.integrated-student-more:hover,.integrated-student-more[aria-expanded="true"]{border-color:#86909c;background:#f7f8fa}
+.integrated-student-more-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:90;width:184px;padding:8px;border:1px solid #e1e5ea;border-radius:12px;background:#fff;box-shadow:0 14px 34px rgba(31,45,61,.16)}
+.integrated-student-more-menu[hidden]{display:none}
+.integrated-student-more-menu svg{width:18px;height:18px;flex:0 0 auto}
 .integrated-student-card{width:100%;padding:clamp(22px,2vw,42px);overflow:visible;border:1px solid #e8ebef;border-radius:clamp(20px,1.15vw,30px);background:#fff;box-shadow:0 12px 34px rgba(43,60,80,.055)}
 .integrated-student-responsive{width:100%;overflow:visible}
 .integrated-student-table{width:100%;min-width:1060px;border-collapse:collapse;color:#4e5969;font-size:13px}
@@ -2689,8 +2692,13 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +        '<h2 class="integrated-section-title">学生明细</h2>'
     +        '<div class="integrated-student-tools">'
     +          '<div class="integrated-student-search" aria-label="搜索学生名字（占位）"><span class="integrated-student-search-placeholder">搜索学生名字</span><span class="integrated-student-search-icon" aria-hidden="true"></span></div>'
-    +          '<button class="integrated-student-head-action" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"></path><path d="m8 10 4 4 4-4"></path><path d="M5 18v3h14v-3"></path></svg><span>下载学生作业</span></button>'
-    +          '<button class="integrated-student-head-action" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"></path><path d="m8 10 4 4 4-4"></path><path d="M5 18v3h14v-3"></path></svg><span>导出 Excel</span></button>'
+    +          '<div class="integrated-student-more-wrap">'
+    +            '<button class="integrated-student-more" id="integratedStudentMoreButton" type="button" aria-label="学生明细更多操作" aria-haspopup="menu" aria-expanded="false" aria-controls="integratedStudentMoreMenu">···</button>'
+    +            '<div class="integrated-student-more-menu" id="integratedStudentMoreMenu" role="menu" hidden>'
+    +              '<button class="integrated-nav-menu-item" type="button" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"></path><path d="m8 10 4 4 4-4"></path><path d="M5 18v3h14v-3"></path></svg><span>下载学生作业</span></button>'
+    +              '<button class="integrated-nav-menu-item" type="button" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"></path><path d="m8 10 4 4 4-4"></path><path d="M5 18v3h14v-3"></path></svg><span>导出 Excel</span></button>'
+    +            '</div>'
+    +          '</div>'
     +        '</div>'
     +      '</div>'
     +      '<div class="integrated-student-responsive">'
@@ -2755,6 +2763,27 @@ body.is-learning-map-fullscreen{overflow:hidden}
   (function initPageActions(){
     var moreButton=shell.querySelector("#integratedNavMoreButton");
     var moreMenu=shell.querySelector("#integratedNavMoreMenu");
+    function closeMoreMenu(){
+      if(!moreButton||!moreMenu)return;
+      moreMenu.hidden=true;
+      moreButton.setAttribute("aria-expanded","false");
+    }
+    if(moreButton&&moreMenu){
+      moreButton.addEventListener("click",function(event){
+        event.stopPropagation();
+        var shouldOpen=moreMenu.hidden;
+        moreMenu.hidden=!shouldOpen;
+        moreButton.setAttribute("aria-expanded",shouldOpen?"true":"false");
+      });
+      moreMenu.addEventListener("click",function(event){event.stopPropagation()});
+      document.addEventListener("click",closeMoreMenu);
+      document.addEventListener("keydown",function(event){if(event.key==="Escape")closeMoreMenu()});
+    }
+  }());
+
+  (function initStudentDetailActions(){
+    var moreButton=shell.querySelector("#integratedStudentMoreButton");
+    var moreMenu=shell.querySelector("#integratedStudentMoreMenu");
     function closeMoreMenu(){
       if(!moreButton||!moreMenu)return;
       moreMenu.hidden=true;
@@ -3659,7 +3688,7 @@ window.PinMarkReviewConfig={
         "错题只精确到大题题号；未提交或无数据的字段显示“--”或“-”。",
         "点击总览中的重点关注学生，自动滚动到该学生行并短暂高亮。",
         "搜索学生姓名在当前 demo 中仅为视觉占位；正式产品需复用线上搜索组件并支持无结果状态。",
-        "搜索框右侧展示“下载学生作业”和“导出 Excel”，不再收起在顶部更多菜单中。"
+        "搜索框右侧展示三点更多菜单；菜单依次提供“下载学生作业”和“导出 Excel”，不在顶部更多菜单中重复展示。"
       ],
       selector:"#integratedStudentDetails", x:.995, y:.055
     },
