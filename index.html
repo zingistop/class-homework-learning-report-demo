@@ -3444,8 +3444,8 @@ body.is-learning-map-fullscreen{overflow:hidden}
     var studentName=more.closest("tr").querySelector(".student-name").textContent.trim();
     var diagnosis=document.createElement("a");
     diagnosis.className="student-action-link";
-    diagnosis.textContent="个人学情";
-    diagnosis.href="../学生作业学情/index.html?student="+encodeURIComponent(studentName);
+    diagnosis.textContent="查看学情";
+    diagnosis.href="student.html?student="+encodeURIComponent(studentName);
     var grading=document.createElement("button");
     grading.type="button";
     grading.className="student-action-link is-static";
@@ -3695,8 +3695,8 @@ window.PinMarkReviewConfig={
     {
       id:"student-actions", number:"10", title:"学生操作",
       points:[
-        "每行直接展示“个人学情”和“查看批改”，避免高频操作隐藏在更多菜单。",
-        "个人学情进入对应学生的作业学情页；查看批改当前仅展示按钮，不支持点击跳转。",
+        "每行直接展示“查看学情”和“查看批改”，避免高频操作隐藏在更多菜单。",
+        "点击“查看学情”进入当前项目内的学生单次作业学情页；查看批改当前仅展示按钮，不支持点击跳转。",
         "更多菜单仅保留下载作业、删除作业、查看订正和删除订正，不重复放入“查看批改”。",
         "不满足操作条件时将菜单项置灰；删除类操作需二次确认。"
       ],
