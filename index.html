@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>飞象星球 · 智能作业</title>
+<title>单次作业-班级与学生学情</title>
 <style>
 :root{--blue:#237bff;--ink:#161d29}
 *{box-sizing:border-box}
@@ -542,7 +542,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
             <div class="plan-two-step-copy">
               <div class="plan-two-step-head"><div class="plan-two-step-title"><span>第六步</span><strong>生成诊断结果与报告</strong></div><span class="plan-two-step-state">等待处理</span></div>
               <p class="plan-two-step-summary">将后端最终产物组织为可查看、可追溯的班级诊断页面。</p>
-              <div class="plan-two-step-detail"><span class="plan-two-data">结果页面<strong>学情总览</strong></span><span class="plan-two-data">结果页面<strong>逐题诊断</strong></span><span class="plan-two-data">说明<strong>数据范围与结论边界</strong></span></div>
+              <div class="plan-two-step-detail"><span class="plan-two-data">结果页面<strong>学情概览</strong></span><span class="plan-two-data">结果页面<strong>题目诊断</strong></span><span class="plan-two-data">说明<strong>数据范围与结论边界</strong></span></div>
             </div>
           </article>
         </div>
@@ -583,7 +583,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
       <span class="generation-complete-mark" aria-hidden="true">✓</span>
       <div>
         <strong>班级错因诊断已生成</strong>
-        <p>六步诊断过程已完成，可以查看班级学情总览与逐题诊断结果。</p>
+        <p>六步诊断过程已完成，可以查看班级学情概览与题目诊断结果。</p>
       </div>
       <button type="button" id="viewDiagnosisResult">查看诊断结果</button>
     </section>
@@ -593,7 +593,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
     <div class="landing-canvas">
       <img class="landing-base" alt="班级错因诊断结果页背景" src="班级错因诊断落地页背景.png">
       <img class="landing-breadcrumb" alt="首页、作业与考试、班级错因诊断" src="班级错因诊断落地页面包屑.png">
-      <img class="landing-tabs" alt="学情总览、逐题诊断" src="班级错因诊断落地页切换标签.png">
+      <img class="landing-tabs" alt="学情概览、逐题诊断" src="班级错因诊断落地页切换标签.png">
       <div class="landing-reveal" aria-label="班级错因诊断全景图生成中">
         <img class="landing-art" id="landingArt" src="动画素材.png" alt="从学生作答到共性错因的班级诊断全景图" loading="eager" fetchpriority="high">
         <img class="landing-art-highlight" id="landingArtHighlight" src="动画素材-共性高亮.png" alt="左侧题目对应的班级共性问题高亮图" loading="eager" fetchpriority="high">
@@ -612,8 +612,8 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
       <img class="detail-index" src="逐题诊断题号列表.png" alt="题目正确率列表">
       <img class="detail-ai" src="逐题诊断AI助手.png" alt="飞象AI助手">
       <img class="detail-breadcrumb" src="班级错因诊断落地页面包屑.png" alt="首页、作业与考试、班级错因诊断">
-      <img class="detail-tabs" src="班级错因诊断逐题诊断标签.png" alt="学情总览、逐题诊断">
-      <button class="detail-summary-hit" id="detailSummary" type="button" aria-label="切换到学情总览"></button>
+      <img class="detail-tabs" src="班级错因诊断逐题诊断标签.png" alt="学情概览、逐题诊断">
+      <button class="detail-summary-hit" id="detailSummary" type="button" aria-label="切换到学情概览"></button>
     </div>
   </div>
   <button class="ai-float" id="aiFloat" type="button" hidden aria-hidden="true" aria-label="关闭飞象AI并返回原页面">
@@ -1104,7 +1104,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
     +'</div>'
     +'<section class="generation-complete" id="planTwoV2Complete" hidden aria-live="polite">'
     +  '<span class="generation-complete-mark" aria-hidden="true">✓</span>'
-    +  '<div><strong>班级错因诊断已生成</strong><p>六步处理过程已完成，可以查看班级学情总览与逐题诊断结果。</p></div>'
+    +  '<div><strong>班级错因诊断已生成</strong><p>六步处理过程已完成，可以查看班级学情概览与题目诊断结果。</p></div>'
     +  '<button type="button" id="planTwoV2ViewResult">查看诊断结果</button>'
     +'</section>';
 
@@ -1233,26 +1233,26 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
       result:'<p class="v4-stage-copy">教学建议采用固定组织框架，但具体建议内容必须由最终诊断结果驱动；过程页面不提前展示虚构的学生分层人数。</p>'
         +'<div class="v4-method-note"><article><b>全班共性讲评</b><p>依据最终班级共性问题，组织需要全班统一讲评的内容。</p></article><article><b>群体分层训练</b><p>依据后端结果中的相似错因与掌握表现，组织分层练习。</p></article><article><b>个体支持与复测</b><p>依据实际个体诊断数据，组织补救、订正与后续复测。</p></article></div>'
         +analysisTable(["建议层级","生成依据","最终展示位置"],[
-          ["全班建议","班级共性问题与优先级","学情总览"],
-          ["群体建议","相似错因与掌握表现","学情总览 / 分层建议"],
+          ["全班建议","班级共性问题与优先级","学情概览"],
+          ["群体建议","相似错因与掌握表现","学情概览 / 分层建议"],
           ["个体支持","学生逐题诊断结果","逐题诊断 / 学生明细"],
           ["跟踪方式","诊断问题与教学行动","教学改进建议"]
         ],"教学建议固定组织框架"),
       tail:1000
     },
     {
-      tag:"第六步 · 生成诊断结果页面",title:"写入最终结果、数据范围与结论依据",meta:"学情总览 · 逐题诊断 · 数据说明",
+      tag:"第六步 · 生成诊断结果页面",title:"写入最终结果、数据范围与结论依据",meta:"学情概览 · 逐题诊断 · 数据说明",
       activity:"正在生成班级诊断结果页面",
       entries:[
-        ["chart-no-axes-combined","写入班级学情总览","展示后端最终返回的班级层面结果"],
+        ["chart-no-axes-combined","写入班级学情概览","展示后端最终返回的班级层面结果"],
         ["scan-search","写入逐题诊断结果","展示每道题对应的诊断数据与依据"],
         ["shield-check","补充数据范围说明","说明学校、班级、作业与输入数据边界"],
         ["link","关联结果与后台字段","确保页面结论能够回到实际数据来源"],
         ["circle-check-big","完成结果页面生成","结果数据已准备，可以进入查看"]
       ],
       result:'<p class="v4-stage-copy">系统把后端最终产物写入结果页面，并补充本次作业的数据范围与结论边界。过程完成后，用户再查看具体诊断结果。</p>'
-        +'<div class="v4-report-sections"><article><span>结果模块 01</span><strong>班级学情总览</strong><p>展示最终班级表现、共性问题和教学建议。</p></article><article><span>结果模块 02</span><strong>逐题诊断</strong><p>展示每道题的实际诊断结果与对应依据。</p></article><article><span>结果模块 03</span><strong>数据范围说明</strong><p>说明本次诊断使用的数据、缺失信息与结论边界。</p></article></div>'
-        +'<div class="v4-final-boundary">'+icon("badge-check")+'阶段结果：最终诊断内容已由后端生成并写入结果页面，可以查看学情总览与逐题诊断。</div>',
+        +'<div class="v4-report-sections"><article><span>结果模块 01</span><strong>班级学情概览</strong><p>展示最终班级表现、共性问题和教学建议。</p></article><article><span>结果模块 02</span><strong>逐题诊断</strong><p>展示每道题的实际诊断结果与对应依据。</p></article><article><span>结果模块 03</span><strong>数据范围说明</strong><p>说明本次诊断使用的数据、缺失信息与结论边界。</p></article></div>'
+        +'<div class="v4-final-boundary">'+icon("badge-check")+'阶段结果：最终诊断内容已由后端生成并写入结果页面，可以查看学情概览与题目诊断。</div>',
       tail:1100
     }
   ];
@@ -1487,7 +1487,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
     +  '<div class="plan-three-rule" aria-hidden="true"></div>'
     +  '<div class="plan-three-stream" id="planThreeStream" aria-live="polite"></div>'
     +  '<section class="plan-three-result" id="planThreeResult" aria-label="方案二诊断完成">'
-    +    '<div class="plan-three-result-copy"><strong>班级错因诊断已生成</strong><p>后端诊断结果已经就绪，可进入结果页查看学情总览与逐题诊断。</p></div>'
+    +    '<div class="plan-three-result-copy"><strong>班级错因诊断已生成</strong><p>后端诊断结果已经就绪，可进入结果页查看学情概览与题目诊断。</p></div>'
     +    '<button id="planThreeViewResult" type="button">查看诊断结果</button>'
     +  '</section>'
     +'</section>';
@@ -1670,7 +1670,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
     var article=document.createElement("article");
     article.className="plan-three-turn plan-three-final-turn";
     article.innerHTML=''
-      +'<p><strong>班级错因诊断已经生成。</strong> 后端结果已写入学情总览与逐题诊断页面，本页同步呈现与结果对应的数据读取、诊断服务和组织过程。</p>'
+      +'<p><strong>班级错因诊断已经生成。</strong> 后端结果已写入学情概览与题目诊断页面，本页同步呈现与结果对应的数据读取、诊断服务和组织过程。</p>'
       +'<div class="plan-three-action is-complete" data-persistent="true">'
       +  '<i data-lucide="check" aria-hidden="true"></i>'
       +  '<span class="plan-three-action-label">处理完成</span>'
@@ -1779,7 +1779,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
     "support-plan":{
       copy:"系统将逐题诊断、班级共性问题和学生分层组织为最终结果，并转换为教师可以继续执行的教学改进方案。",
       cards:[
-        ["诊断结果","形成学情总览、逐题错因与班级共性问题"],
+        ["诊断结果","形成学情概览、逐题错因与班级共性问题"],
         ["教学安排","组织全班讲评、分层训练与个别补救"],
         ["改进闭环","连接诊断结论、教学行动、学生练习与复测验证"]
       ],
@@ -1901,7 +1901,7 @@ T/7lX9GjH/UIUoWnn/mMp4rGY/yAPPxA2ZnZfEF3Hy0oC5onQfTcx+Da630SUytSL3/JKaKp8mcGYmey
         ["整理逐题诊断结果","汇总每道题的错因表现与对应依据"],
         ["汇总班级共性错因","写入已经归纳的班级共性问题"],
         ["补充数据范围说明","说明本次诊断使用的数据与结论边界"],
-        ["生成诊断结果页面","完成学情总览与逐题诊断结果组织"]
+        ["生成诊断结果页面","完成学情概览与逐题诊断结果组织"]
       ]
     }
   };
@@ -2075,6 +2075,8 @@ html,body{background:#f6f8fb!important}
 .integrated-nav-menu[hidden]{display:none}
 .integrated-nav-menu-item{display:flex;align-items:center;justify-content:flex-start;gap:12px;width:100%;height:44px;padding:0 12px;border:0;border-radius:8px;background:transparent;color:#1d2733;font-size:14px;font-weight:480;text-align:left;white-space:nowrap;cursor:pointer}
 .integrated-nav-menu-item:hover{background:#f6f7f9}
+.integrated-nav-menu-item.is-danger{color:#d54941}
+.integrated-nav-menu-item.is-danger:hover{background:#fff2f0}
 .integrated-nav-menu-placeholder{display:inline-block;flex:0 0 auto;width:28px;height:16px;border-radius:4px;background:#d9dde3}
 .integrated-section{width:100%;margin:0 0 clamp(34px,3.4vw,58px)}
 .integrated-section-title{margin:0 0 16px 4px;color:#202936;font-size:clamp(22px,1.28vw,34px);font-weight:720;letter-spacing:.01em}
@@ -2190,17 +2192,22 @@ html,body{background:#f6f8fb!important}
 .integrated-ai-summary-card.is-review-required .integrated-ai-summary-review-required p{color:#596575;font-size:15px;line-height:1.8}
 .integrated-review-question-link{color:#7898c7;text-decoration:none}
 .integrated-review-question-link:hover{text-decoration:underline;text-underline-offset:3px}
-.integrated-submission-popover-trigger{position:relative;display:inline;padding:1px 3px;border:0;border-radius:4px;background:transparent;color:#7898c7;font:inherit;line-height:inherit;cursor:pointer}
+.integrated-submission-popover-trigger{position:relative;display:inline;padding:1px 3px;border:0;border-radius:4px;background:transparent;color:inherit;font:inherit;line-height:inherit;cursor:pointer}
 .integrated-submission-popover-trigger:hover,.integrated-submission-popover-trigger:focus-visible{background:#edf4ff;outline:0}
 .integrated-submission-popover{position:absolute;left:50%;top:calc(100% + 10px);z-index:30;display:none;width:min(430px,calc(100vw - 42px));padding:18px 19px;border:1px solid #dce2e9;border-radius:12px;background:#fff;color:#5f6874;font-size:13px;font-weight:400;line-height:1.65;text-align:left;box-shadow:0 14px 36px rgba(35,49,65,.16);transform:translateX(-50%)}
 .integrated-submission-popover::before{content:"";position:absolute;left:50%;top:-6px;width:10px;height:10px;border-left:1px solid #dce2e9;border-top:1px solid #dce2e9;background:#fff;transform:translateX(-50%) rotate(45deg)}
 .integrated-submission-popover-trigger:hover .integrated-submission-popover,.integrated-submission-popover-trigger:focus .integrated-submission-popover,.integrated-submission-popover-trigger:focus-within .integrated-submission-popover{display:block}
 .integrated-submission-popover-section{display:block}
 .integrated-submission-popover-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:7px}
+.integrated-submission-popover-actions{display:inline-flex;align-items:center;gap:8px}
 .integrated-submission-popover-title{display:block;color:#27313d;font-size:15px;font-weight:600}
-.integrated-submission-copy{display:inline-flex;align-items:center;justify-content:center;min-width:48px;height:26px;padding:0 8px;border:1px solid #dce4ee;border-radius:6px;background:#f8faff;color:#6483b3;font-size:12px;font-weight:500;line-height:1;cursor:pointer;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.integrated-submission-copy{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:48px;height:26px;padding:0 8px;border:1px solid #dce4ee;border-radius:6px;background:#f8faff;color:#6483b3;font-size:12px;font-weight:500;line-height:1;cursor:pointer;transition:background .16s ease,border-color .16s ease,color .16s ease}
 .integrated-submission-copy:hover{border-color:#c6d5e8;background:#eef4fc;color:#4f73aa}
 .integrated-submission-copy:focus-visible{outline:2px solid #7898c7;outline-offset:2px}
+.integrated-submission-copy svg,.integrated-submission-remind svg{width:14px;height:14px;flex:0 0 auto}
+.integrated-submission-remind{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:62px;height:26px;padding:0 8px;border:1px solid #dce4ee;border-radius:6px;background:#f8faff;color:#6483b3;font-size:12px;font-weight:500;line-height:1;cursor:pointer;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.integrated-submission-remind:hover{border-color:#c6d5e8;background:#eef4fc;color:#4f73aa}
+.integrated-submission-remind:focus-visible{outline:2px solid #7898c7;outline-offset:2px}
 .integrated-submission-popover-names{display:block;color:#737c87}
 .integrated-submission-popover-divider{display:block;height:1px;margin:14px 0;background:#edf0f3}
 .integrated-review-actions{display:flex;align-items:center;gap:12px;margin:14px 0 0 28px}
@@ -2238,7 +2245,7 @@ html,body{background:#f6f8fb!important}
 .integrated-analysis-trace-content .v4-stage-heading-side small{font-size:8px}
 .integrated-analysis-trace-content .v4-stage-copy{font-size:11.5px}
 .integrated-ai-summary-section{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;margin-top:14px}
-.integrated-ai-summary-index{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-top:1px;border-radius:7px;background:#f0f2ff;color:#7e85c9;font-size:12px;line-height:1}
+.integrated-ai-summary-index{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-top:1px;border-radius:7px;background:#f0f2ff;color:#4e5969;font-size:12px;line-height:1}
 .integrated-ai-summary-section-body{min-width:0}
 .integrated-ai-summary-section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 5px}
 .integrated-ai-summary-section-title{margin:0;color:#303946;font-size:14px;font-weight:600;line-height:1.5}
@@ -2269,18 +2276,14 @@ html,body{background:#f6f8fb!important}
 .integrated-ai-review-link{display:inline-block;margin-left:5px;color:#7898c7;text-decoration:none;white-space:nowrap}
 .integrated-ai-review-link:hover{text-decoration:underline;text-underline-offset:3px}
 .integrated-summary-emphasis{font-weight:inherit}
-.integrated-summary-emphasis.is-count{color:#69a88e}
+.integrated-summary-emphasis.is-count{color:inherit}
 .integrated-summary-link{display:inline;padding:1px 2px;border:0;border-radius:4px;background:transparent;color:inherit;font:inherit;font-weight:inherit;line-height:inherit;cursor:pointer;transition:background .16s ease,color .16s ease,box-shadow .16s ease}
 .integrated-summary-link.is-question,.integrated-summary-link.is-cause,.integrated-summary-link.is-student{color:inherit}
 .integrated-summary-link:hover,.integrated-summary-link:focus-visible{text-decoration:underline;text-underline-offset:3px}
-.integrated-summary-link.is-question:hover,.integrated-summary-link.is-question:focus-visible{background:#edf4ff;color:#7898c7}
-.integrated-summary-link.is-cause:hover,.integrated-summary-link.is-cause:focus-visible{background:#f3efff;color:#8d7ac2}
-.integrated-summary-link.is-student:hover,.integrated-summary-link.is-student:focus-visible{background:#fff1ed;color:#b97969}
+.integrated-summary-link.is-question:hover,.integrated-summary-link.is-question:focus-visible{background:#edf4ff;color:inherit}
+.integrated-summary-link.is-cause:hover,.integrated-summary-link.is-cause:focus-visible{background:#f3efff;color:inherit}
+.integrated-summary-link.is-student:hover,.integrated-summary-link.is-student:focus-visible{background:#fff1ed;color:inherit}
 .integrated-summary-link:focus-visible{outline:2px solid currentColor;outline-offset:1px}
-.integrated-selection-ai[hidden]{display:none!important}
-.integrated-selection-ai{position:fixed;z-index:680;display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 13px;border:1px solid #d9e2ee;border-radius:9px;background:#fff;color:#2868c7;font-size:13px;font-weight:680;white-space:nowrap;cursor:pointer;box-shadow:0 8px 24px rgba(30,49,72,.18);animation:integrated-selection-ai-in .14s ease both}
-.integrated-selection-ai:hover{background:#f5f9ff;border-color:#bfd2ed}
-@keyframes integrated-selection-ai-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 .integrated-insight-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 18px}
 .integrated-insight-card{display:flex;align-items:center;justify-content:space-between;gap:18px;min-width:0;min-height:64px;padding:13px 20px;border:1px solid #e1e6ec;border-radius:17px;background:#fff;box-shadow:0 5px 16px rgba(43,60,80,.025)}
 .integrated-insight-title{flex:0 0 auto;color:#28313d;font-size:14px;font-weight:650;white-space:nowrap}
@@ -2370,6 +2373,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
 .integrated-question-figure.is-q3{width:114px}
 .integrated-question-meta{display:block;padding:0;color:#9a9fa7;font-size:12px;line-height:1.6}
 .integrated-question-knowledge{display:inline}
+.integrated-question-core-competency{display:block;margin-top:2px}
 .integrated-question-answer-entry{display:inline-block;margin-left:18px;color:#9a9fa7;cursor:default;transition:color .16s ease;user-select:none}
 .integrated-question-answer-entry:hover{color:#3370ff}
 .integrated-question-diagnosis{display:grid;gap:14px;margin-top:2px}
@@ -2533,8 +2537,8 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +'<nav class="integrated-learning-breadcrumb" aria-label="页面路径与操作">'
     +  '<div class="integrated-learning-breadcrumb-trail">'
     +    '<span class="integrated-back" aria-hidden="true">‹</span><span>首页</span>'
-    +    '<span class="integrated-chevron" aria-hidden="true">›</span><span>作业与考试</span>'
-    +    '<span class="integrated-chevron" aria-hidden="true">›</span><span class="integrated-current">学情</span>'
+    +    '<span class="integrated-chevron" aria-hidden="true">›</span><span>AI批改</span>'
+    +    '<span class="integrated-chevron" aria-hidden="true">›</span><span class="integrated-current">班级学情</span>'
     +  '</div>'
     +  '<div class="integrated-nav-actions" aria-label="页面操作">'
     +    '<button class="integrated-nav-action is-static" id="integratedViewGradingAction" type="button">查看批改</button>'
@@ -2545,7 +2549,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +      '<div class="integrated-nav-menu" id="integratedNavMoreMenu" role="menu" hidden>'
     +        '<button class="integrated-nav-menu-item" type="button" role="menuitem"><span class="integrated-nav-menu-placeholder" aria-hidden="true"></span><span>下载题单附件</span></button>'
     +        '<button class="integrated-nav-menu-item" type="button" role="menuitem"><span class="integrated-nav-menu-placeholder" aria-hidden="true"></span><span>查看订正详情</span></button>'
-    +        '<button class="integrated-nav-menu-item" type="button" role="menuitem"><span class="integrated-nav-menu-placeholder" aria-hidden="true"></span><span>催交学生作业</span></button>'
+    +        '<button class="integrated-nav-menu-item is-danger" type="button" role="menuitem"><span class="integrated-nav-menu-placeholder" aria-hidden="true"></span><span>删除本次作业</span></button>'
     +      '</div>'
     +    '</div>'
     +  '</div>'
@@ -2553,7 +2557,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +'<section class="integrated-section integrated-result-section" id="integratedResultSection">'
     +  '<div class="integrated-summary-plan" id="integratedSummaryPlanOne">'
     +    '<article class="integrated-ai-summary-card" id="integratedAiSummaryCard">'
-    +      '<div class="integrated-summary-head"><div class="integrated-summary-head-copy"><h2 class="integrated-section-title integrated-summary-title">学情总览</h2></div></div>'
+    +      '<div class="integrated-summary-head"><div class="integrated-summary-head-copy"><h2 class="integrated-section-title integrated-summary-title">学情概览</h2></div></div>'
     +      '<section class="integrated-analysis-trace" id="integratedAnalysisTrace">'
     +        '<div class="integrated-analysis-trace-meta-row"><span id="integratedAnalysisTraceMeta">分析用时2分44秒</span><span aria-hidden="true">·</span><span class="integrated-analysis-trace-toggle is-static" aria-disabled="true">查看思考过程</span></div>'
     +        '<div class="integrated-analysis-trace-panel" id="integratedAnalysisTracePanel" hidden><div class="integrated-analysis-trace-content" id="integratedAnalysisTraceContent"><p class="integrated-analysis-trace-empty">分析记录正在整理…</p></div></div>'
@@ -2561,14 +2565,14 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +      '<div class="integrated-overview-content" id="integratedOverviewContent">'
     +      '<div class="integrated-ai-summary-copy" id="integratedAiSummaryCopy">'
     +        '<div class="integrated-ai-summary-standard" data-review-view="none">'
-    +        '<p class="integrated-ai-summary-lead"><img class="integrated-ai-summary-icon" src="assets/learning-overview/ai-summary-sparkle.png" alt="">本次作业应提交<span class="integrated-summary-emphasis is-count">42</span>人，实提交<span class="integrated-summary-emphasis is-count">34</span>人（约<span class="integrated-summary-emphasis is-count">80%</span>），34份作答均已完成批改。AI已基于当前作答完成班级学情诊断，结论如下：</p>'
+    +        '<p class="integrated-ai-summary-lead"><img class="integrated-ai-summary-icon" src="assets/learning-overview/ai-summary-sparkle.png" alt=""><span class="integrated-submission-popover-trigger" tabindex="0">本次作业应提交<span class="integrated-summary-emphasis is-count">42</span>人，实提交<span class="integrated-summary-emphasis is-count">34</span>人，未提交<span class="integrated-summary-emphasis is-count">8</span>人，提交率<span class="integrated-summary-emphasis is-count">81%</span>。<span class="integrated-submission-popover" id="integratedSummarySubmissionPopover" role="tooltip"><span class="integrated-submission-popover-section" data-submission-group="submitted"><span class="integrated-submission-popover-head"><strong class="integrated-submission-popover-title">提交人数（34人）</strong><button class="integrated-submission-copy" type="button" data-review-copy="submitted" aria-label="复制已提交学生名单"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-copy-label>复制</span></button></span><span class="integrated-submission-popover-names" data-submission-names>刘礼宁、文心漪、杨宜睿、江湛玥、于千画、潘俊远、史乐彤、李伟赫、裴子慧、朱宇博、李子硕、侯秉卓、刘俊龙、吕凯彬、马悦涵、王睿雯、张辰雨、吴佳好、刘羽欣、陈紫君、钟韦亮、巫睿科、张力为、邓雅曦、周子皓、吴思妍、付佳静、陈浩霖、郭宇隽、冯向羽、张启乾、陈梓萱、李心慧、余谨澄</span></span><span class="integrated-submission-popover-divider"></span><span class="integrated-submission-popover-section" data-submission-group="missing"><span class="integrated-submission-popover-head"><strong class="integrated-submission-popover-title">未提交（8人）</strong><span class="integrated-submission-popover-actions"><button class="integrated-submission-remind" type="button" data-remind-missing aria-label="催交未提交学生"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span data-remind-label>催交</span></button><button class="integrated-submission-copy" type="button" data-review-copy="missing" aria-label="复制未提交学生名单"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-copy-label>复制</span></button></span></span><span class="integrated-submission-popover-names" data-submission-names>欧阳凌萱、张启航、韩子墨、朱欣怡、林浩然、蒋嘉宁、徐佳宁、周雨桐</span></span></span></span>提交作业批改已完成，AI班级学情诊断结果如下：</p>'
     +        '<section class="integrated-ai-summary-section" id="pinmarkQuestionFocus">'
     +          '<span class="integrated-ai-summary-index">1</span>'
-    +          '<div class="integrated-ai-summary-section-body"><div class="integrated-ai-summary-section-head"><h3 class="integrated-ai-summary-section-title">需关注题目</h3></div><p class="integrated-ai-summary-section-text">本次作业共15道题，其中有3道班级共性错题：<button class="integrated-summary-link is-question" type="button" data-summary-question="1">题1（66%）</button>、<button class="integrated-summary-link is-question" type="button" data-summary-question="2">题2（43%）</button>、<button class="integrated-summary-link is-question" type="button" data-summary-question="3">题3（68%）</button>。建议讲评时重点关注。</p></div>'
+    +          '<div class="integrated-ai-summary-section-body"><div class="integrated-ai-summary-section-head"><h3 class="integrated-ai-summary-section-title">需关注题目</h3></div><p class="integrated-ai-summary-section-text">本次作业共15道题，其中有3道班级共性错题：<button class="integrated-summary-link is-question" type="button" data-summary-question="3">题3（68%）</button>、<button class="integrated-summary-link is-question" type="button" data-summary-question="1">题1（66%）</button>、<button class="integrated-summary-link is-question" type="button" data-summary-question="2">题2（43%）</button>，建议讲评时重点关注</p></div>'
     +        '</section>'
     +        '<section class="integrated-ai-summary-section" id="pinmarkStudentPerformance">'
     +          '<span class="integrated-ai-summary-index">2</span>'
-    +          '<div class="integrated-ai-summary-section-body"><div class="integrated-ai-summary-section-head"><h3 class="integrated-ai-summary-section-title">需关注学生</h3></div><p class="integrated-ai-summary-section-text">本次作业班级平均正确率为<span class="integrated-summary-emphasis is-count">78%</span>。<button class="integrated-summary-link is-student" type="button" data-summary-student="陈一">陈一（51%）</button>、<button class="integrated-summary-link is-student" type="button" data-summary-student="李二">李二（50%）</button>、<button class="integrated-summary-link is-student" type="button" data-summary-student="邓三">邓三（48%）</button>三位学生的正确率低于班级平均水平，是本次作业需重点关注的学生。</p></div>'
+    +          '<div class="integrated-ai-summary-section-body"><div class="integrated-ai-summary-section-head"><h3 class="integrated-ai-summary-section-title">需关注学生</h3></div><p class="integrated-ai-summary-section-text">本次作业平均正确率为<span class="integrated-summary-emphasis is-count">78%</span>。其中，<button class="integrated-summary-link is-student" type="button" data-summary-student="邓三">邓三（48%）</button>、<button class="integrated-summary-link is-student" type="button" data-summary-student="李二">李二（50%）</button>、<button class="integrated-summary-link is-student" type="button" data-summary-student="陈一">陈一（51%）</button>的正确率低于班级平均水平，需重点关注</p></div>'
     +        '</section>'
     +        '<section class="integrated-ai-summary-section" id="pinmarkCausePerformance">'
     +          '<span class="integrated-ai-summary-index">3</span>'
@@ -2576,7 +2580,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +          '</div>'
     +        '</section>'
     +        '</div>'
-    +        '<div class="integrated-ai-summary-review-required" data-review-view="required" hidden><div class="integrated-review-placeholder" role="img" aria-label="复核场景占位图"><span>占位图</span></div><p>本次作业提交率为95.8%，<span class="integrated-submission-popover-trigger" tabindex="0">欧阳凌萱、张启航尚未提交<span class="integrated-submission-popover" id="integratedSubmissionPopover" role="tooltip"><span class="integrated-submission-popover-section" data-submission-group="submitted"><span class="integrated-submission-popover-head"><strong class="integrated-submission-popover-title">已提交（46人）</strong><button class="integrated-submission-copy" type="button" data-review-copy="submitted" aria-label="复制已提交学生名单">复制</button></span><span class="integrated-submission-popover-names" data-submission-names>刘礼宁、文心漪、杨宜睿、江湛玥、于千画、潘俊远、史乐彤、李伟赫、裴子慧、朱宇博、李子硕、侯秉卓、刘俊龙、吕凯彬、马悦涵、王睿雯、张辰雨、吴佳好、刘羽欣、陈紫君、钟韦亮、巫睿科、张力为、邓雅曦、周子皓、吴思妍、付佳静、陈浩霖、郭宇隽、冯向羽、张启乾、陈梓萱、李心慧、余谨澄、杨景翊、黄宣华、李子沂、刘俊峻、王子文、黄可伊、张伊祺、杨浩渝、吕悦、韩子墨、朱欣怡、林浩然</span></span><span class="integrated-submission-popover-divider"></span><span class="integrated-submission-popover-section" data-submission-group="missing"><span class="integrated-submission-popover-head"><strong class="integrated-submission-popover-title">未提交（2人）</strong><button class="integrated-submission-copy" type="button" data-review-copy="missing" aria-label="复制未提交学生名单">复制</button></span><span class="integrated-submission-popover-names" data-submission-names>欧阳凌萱、张启航</span></span></span></span>。<a class="integrated-review-question-link" href="https://djl430.github.io/fx-ai/grading-by-question-demo.html?mode=homework&amp;taskId=cluster-homework">第8题</a>和<a class="integrated-review-question-link" href="https://djl430.github.io/fx-ai/grading-by-question-demo.html?mode=homework&amp;taskId=cluster-homework">第9题</a>为多步推导证明题，学生作答路径和表述差异较大，建议教师优先复核相关作答，确认批改结果后再生成错因诊断。</p><div class="integrated-review-actions"><a class="integrated-review-action-link" href="https://djl430.github.io/fx-ai/grading-by-question-demo.html?mode=homework&amp;taskId=cluster-homework">前往复核</a><button class="integrated-review-generate-button" id="integratedReviewGenerateAnyway" type="button">继续生成学情</button></div></div>'
+    +        '<div class="integrated-ai-summary-review-required" data-review-view="required" hidden><div class="integrated-review-placeholder" role="img" aria-label="复核场景占位图"><span>占位图</span></div><p><span class="integrated-submission-popover-trigger" tabindex="0">本次作业应提交42人，实提交34人，未提交8人<span class="integrated-submission-popover" id="integratedSubmissionPopover" role="tooltip"><span class="integrated-submission-popover-section" data-submission-group="submitted"><span class="integrated-submission-popover-head"><strong class="integrated-submission-popover-title">提交人数（34人）</strong><button class="integrated-submission-copy" type="button" data-review-copy="submitted" aria-label="复制已提交学生名单"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-copy-label>复制</span></button></span><span class="integrated-submission-popover-names" data-submission-names>刘礼宁、文心漪、杨宜睿、江湛玥、于千画、潘俊远、史乐彤、李伟赫、裴子慧、朱宇博、李子硕、侯秉卓、刘俊龙、吕凯彬、马悦涵、王睿雯、张辰雨、吴佳好、刘羽欣、陈紫君、钟韦亮、巫睿科、张力为、邓雅曦、周子皓、吴思妍、付佳静、陈浩霖、郭宇隽、冯向羽、张启乾、陈梓萱、李心慧、余谨澄</span></span><span class="integrated-submission-popover-divider"></span><span class="integrated-submission-popover-section" data-submission-group="missing"><span class="integrated-submission-popover-head"><strong class="integrated-submission-popover-title">未提交（8人）</strong><span class="integrated-submission-popover-actions"><button class="integrated-submission-remind" type="button" data-remind-missing aria-label="催交未提交学生"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span data-remind-label>催交</span></button><button class="integrated-submission-copy" type="button" data-review-copy="missing" aria-label="复制未提交学生名单"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span data-copy-label>复制</span></button></span></span><span class="integrated-submission-popover-names" data-submission-names>欧阳凌萱、张启航、韩子墨、朱欣怡、林浩然、蒋嘉宁、徐佳宁、周雨桐</span></span></span>，提交率为81%，低于95%。同时，{批改提示词下发文案}。当前学情可能无法完整反映全班情况，是否仍然生成学情？</span></p><div class="integrated-review-actions"><a class="integrated-review-action-link" href="https://djl430.github.io/fx-ai/grading-by-question-demo.html?mode=homework&amp;taskId=cluster-homework">前往复核</a><button class="integrated-review-generate-button" id="integratedReviewGenerateAnyway" type="button">仍然生成学情</button></div></div>'
     +      '</div>'
     +      '<section class="integrated-cause-overview" data-review-view="none">'
     +        '<div class="integrated-summary-card" id="integratedSummaryCard">'
@@ -2614,7 +2618,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +        '<img class="learning-map-node learning-map-answer learning-map-a6" data-node="a6" src="assets/learning-overview/typical-answer.png" alt="典型作答6">'
     +      '</div>'
     +    '</div>'
-    +    '<div class="learning-map-controls" aria-label="学情总览缩放">'
+    +    '<div class="learning-map-controls" aria-label="学情概览缩放">'
     +      '<button class="learning-map-control" id="learningMapFullscreen" type="button" aria-label="全屏查看错因全景图" aria-pressed="false" title="全屏查看"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4"/></svg></button>'
     +      '<button class="learning-map-control" id="learningMapZoomIn" type="button" aria-label="放大">+</button>'
     +      '<button class="learning-map-control" id="learningMapZoomOut" type="button" aria-label="缩小">−</button>'
@@ -2627,7 +2631,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +  '</div>'
     +  '<section class="integrated-detail-wrap" id="integratedQuestionDiagnosis">'
     +    '<div class="integrated-detail-card">'
-    +      '<div class="integrated-detail-header"><h2 class="integrated-section-title">逐题诊断</h2></div>'
+    +      '<div class="integrated-detail-header"><h2 class="integrated-section-title">题目详情</h2></div>'
     +      '<div class="integrated-detail-body">'
     +        '<aside class="integrated-detail-sidebar" aria-label="题目列表">'
     +          '<div class="integrated-detail-tabs" role="tablist" aria-label="题目正确率列表">'
@@ -2639,7 +2643,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +        '<div class="integrated-detail-scroll"><div class="integrated-detail-content">'
     +          '<section class="integrated-question-panel" id="integratedQuestionPanel1" role="tabpanel" data-question-panel="1">'
     +            '<div class="integrated-question-prompt"><div class="integrated-question-stem"><p><span class="integrated-question-number">1.</span>如图，已知 AD＝AE，添加下列条件仍无法证明 △ABE≌△ACD 的是（&nbsp;&nbsp;&nbsp;）</p><div class="integrated-question-options"><span>A．AB＝AC</span><span>B．∠ADC＝∠AEB</span><span>C．∠B＝∠C</span><span>D．BE＝CD</span></div></div><img class="integrated-question-figure is-q1" src="assets/question-diagnosis/diagram-01.png" alt="题1几何图形"></div>'
-    +            '<div class="integrated-question-meta"><span class="integrated-question-knowledge">知识点：全等三角形的判定综合-II级（理解）</span><span class="integrated-question-answer-entry" aria-disabled="true">查看答案解析</span></div>'
+    +            '<div class="integrated-question-meta"><span class="integrated-question-knowledge">知识点：全等三角形的判定综合-II级（理解）</span><span class="integrated-question-answer-entry" aria-disabled="true">查看答案解析</span><span class="integrated-question-core-competency">核心素养：xx</span></div>'
     +            '<div class="integrated-question-diagnosis"><div class="integrated-answer-distribution" aria-label="题1选项作答分布">'
     +              '<div class="integrated-distribution-item"><div class="integrated-distribution-head"><strong>A</strong><span>7人</span></div><button class="integrated-distribution-names" type="button">于千画、刘俊龙 +5</button><span class="integrated-distribution-popover" role="tooltip">于千画、刘俊龙、张辰雨、吴佳好、刘羽欣、陈紫君、钟韦亮</span></div>'
     +              '<div class="integrated-distribution-item"><div class="integrated-distribution-head"><strong>B</strong><span>3人</span></div><button class="integrated-distribution-names" type="button">史乐彤、裴子惠 +1</button><span class="integrated-distribution-popover" role="tooltip">史乐彤、裴子惠、巫睿科</span></div>'
@@ -2653,7 +2657,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +          '</section>'
     +          '<section class="integrated-question-panel" id="integratedQuestionPanel2" role="tabpanel" data-question-panel="2">'
     +            '<div class="integrated-question-prompt"><div class="integrated-question-stem"><p><span class="integrated-question-number">2.</span>在 2×4 的正方形网格中，△ABC 的顶点都在小正方形的格点上，这样的三角形称为格点三角形。在网格中与 △ABC 成轴对称的格点三角形一共有 ______ 个。</p></div><img class="integrated-question-figure is-q2" src="assets/question-diagnosis/diagram-02.png" alt="题2格点图形"></div>'
-    +            '<div class="integrated-question-meta"><span class="integrated-question-knowledge">知识点：轴对称与格点图形-II级（理解）</span><span class="integrated-question-answer-entry" aria-disabled="true">查看答案解析</span></div>'
+    +            '<div class="integrated-question-meta"><span class="integrated-question-knowledge">知识点：轴对称与格点图形-II级（理解）</span><span class="integrated-question-answer-entry" aria-disabled="true">查看答案解析</span><span class="integrated-question-core-competency">核心素养：xx</span></div>'
     +            '<div class="integrated-question-diagnosis"><div class="integrated-answer-distribution is-status" aria-label="题2作答情况">'
     +              '<div class="integrated-distribution-item"><div class="integrated-distribution-head"><strong>正确</strong><span>18人</span></div><button class="integrated-distribution-names" type="button">陈一、刘礼宁 +16</button><span class="integrated-distribution-popover" role="tooltip">陈一、刘礼宁、文心棋、潘军运、李心慧、余谨澄、杨景翊、黄宣华、李子沂、刘俊峻、黄可伊、张伊祺、杨浩渝、吕悦、韩子墨、朱欣怡、林浩然、王睿雯</span></div>'
     +              '<div class="integrated-distribution-item"><div class="integrated-distribution-head"><strong>错误</strong><span>21人</span></div><button class="integrated-distribution-names" type="button">李二、邓三 +19</button><span class="integrated-distribution-popover" role="tooltip">李二、邓三、周子皓、吴思妍、付佳静、陈浩霖、郭宇隽、冯向羽、张启乾、陈梓萱、吴佳好、刘羽欣、陈紫君、钟韦亮、巫睿科、张力为、王子文、张辰雨、刘雨欣、李伟赫、裴子慧</span></div>'
@@ -2666,7 +2670,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +          '</section>'
     +          '<section class="integrated-question-panel" id="integratedQuestionPanel3" role="tabpanel" data-question-panel="3">'
     +            '<div class="integrated-question-prompt"><div class="integrated-question-stem"><p><span class="integrated-question-number">3.</span>已知：△ABD 和 △AEC 都是等边三角形，连接 CD，BE 交于点 P。</p><div class="integrated-question-subparts"><p>（1）① 判断 BE 与 DC 的数量关系：______，∠BPD＝______°；② 连接 AP，∠APD 与 ∠APE 的数量关系是：______。</p><p>（2）H、G 分别是 DC、BE 的中点。① 当 ∠BAC＝60° 时，∠AGH＝______°；② 当 ∠BAC 发生变化时，请探究 ∠AGH 的度数是否发生变化，并说明理由。</p><p>（3）连接 AP，求 <span class="integrated-question-formula">（PB＋PC＋2PA）÷（PD＋PE）</span> 的值。</p></div></div><img class="integrated-question-figure is-q3" src="assets/question-diagnosis/diagram-03.png" alt="题3几何探究图形"></div>'
-    +            '<div class="integrated-question-meta"><span class="integrated-question-knowledge">知识点：全等三角形、手拉手模型、等边三角形的性质、圆周角定理、圆内接四边形的托勒密定理</span><span class="integrated-question-answer-entry" aria-disabled="true">查看答案解析</span></div>'
+    +            '<div class="integrated-question-meta"><span class="integrated-question-knowledge">知识点：全等三角形、手拉手模型、等边三角形的性质、圆周角定理、圆内接四边形的托勒密定理</span><span class="integrated-question-answer-entry" aria-disabled="true">查看答案解析</span><span class="integrated-question-core-competency">核心素养：xx</span></div>'
     +            '<div class="integrated-subquestion-list" aria-label="题3各小问诊断">'
     +              '<article class="integrated-subquestion-item">'
     +                '<div class="integrated-subquestion-rate">(1) 正确率&nbsp;17%</div>'
@@ -2689,7 +2693,7 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +  '<section class="integrated-student-wrap" id="integratedStudentDetails">'
     +    '<div class="integrated-student-card">'
     +      '<div class="integrated-student-head">'
-    +        '<h2 class="integrated-section-title">学生明细</h2>'
+    +        '<h2 class="integrated-section-title">学生详情</h2>'
     +        '<div class="integrated-student-tools">'
     +          '<div class="integrated-student-search" aria-label="搜索学生名字（占位）"><span class="integrated-student-search-placeholder">搜索学生名字</span><span class="integrated-student-search-icon" aria-hidden="true"></span></div>'
     +          '<div class="integrated-student-more-wrap">'
@@ -2732,8 +2736,8 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +  '</section>'
     +  '<div class="integrated-review-scenario-footer">'
     +    '<div class="integrated-review-scenario-switch" role="radiogroup" aria-label="复核场景切换">'
-    +      '<label class="integrated-review-scenario-option"><input type="radio" name="integratedReviewScenario" value="none" checked><span>无需复核场景</span></label>'
-    +      '<label class="integrated-review-scenario-option"><input type="radio" name="integratedReviewScenario" value="required"><span>需复核场景</span></label>'
+    +      '<label class="integrated-review-scenario-option"><input type="radio" name="integratedReviewScenario" value="none" checked><span>自动生成学情场景</span></label>'
+    +      '<label class="integrated-review-scenario-option"><input type="radio" name="integratedReviewScenario" value="required"><span>手动生成学情场景</span></label>'
     +    '</div>'
     +  '</div>'
     +'</section>'
@@ -2743,7 +2747,6 @@ body.is-learning-map-fullscreen{overflow:hidden}
     +    '<div class="integrated-ai-panel-body"><div class="integrated-ai-conversation" id="integratedAiConversation"><div class="integrated-ai-greeting">陈老师，有什么想问的问题？</div></div><div class="integrated-ai-input-mock" aria-hidden="true"><span>输入问题...</span><span class="integrated-ai-send-mock">↑</span></div></div>'
     +  '</div>'
     +'</aside>'
-    +'<button class="integrated-selection-ai" id="integratedSelectionAi" type="button" hidden>✦ 问AI</button>'
     +'<div class="learning-map-modal" id="learningMapModal" role="dialog" aria-modal="true" aria-labelledby="learningMapModalTitle" hidden>'
     +  '<div class="learning-map-modal-panel">'
     +    '<button class="learning-map-modal-close" id="learningMapModalClose" type="button" aria-label="关闭">×</button>'
@@ -2863,11 +2866,12 @@ body.is-learning-map-fullscreen{overflow:hidden}
         var section=button.closest("[data-submission-group]");
         var names=section&&section.querySelector("[data-submission-names]");
         if(!names)return;
-        copyText(names.textContent.trim()).then(function(){
-          clearTimeout(button._copyFeedbackTimer);
-          button.textContent="已复制";
-          button._copyFeedbackTimer=setTimeout(function(){button.textContent="复制"},1200);
-        });
+        copyText(names.textContent.trim());
+      });
+    });
+    Array.prototype.forEach.call(shell.querySelectorAll("[data-remind-missing]"),function(button){
+      button.addEventListener("click",function(event){
+        event.preventDefault();event.stopPropagation();
       });
     });
   }());
@@ -2949,20 +2953,6 @@ body.is-learning-map-fullscreen{overflow:hidden}
     }
     if(trigger)trigger.addEventListener("click",openPanel);
     close.addEventListener("click",closePanel);
-    shell.addEventListener("summary-ask-ai",function(event){
-      var selected=(event.detail&&event.detail.text||"").trim();
-      if(!selected)return;
-      openPanel();
-      var user=document.createElement("div");
-      user.className="integrated-ai-message is-user";
-      user.textContent="请结合本次学情分析这段内容：“"+selected+"”";
-      var thinking=document.createElement("div");
-      thinking.className="integrated-ai-message is-assistant is-thinking";
-      thinking.innerHTML='<span>思考中</span><span class="integrated-ai-thinking-dots" aria-hidden="true"><i></i><i></i><i></i></span>';
-      conversation.appendChild(user);
-      conversation.appendChild(thinking);
-      requestAnimationFrame(function(){conversation.scrollTop=conversation.scrollHeight});
-    });
     document.addEventListener("keydown",function(event){if(event.key==="Escape"&&!panel.hidden)closePanel()});
   }());
 
@@ -3256,9 +3246,8 @@ body.is-learning-map-fullscreen{overflow:hidden}
     var map=shell.querySelector("#integratedSummaryCard");
     var diagnosis=shell.querySelector("#integratedQuestionDiagnosis");
     var studentDetails=shell.querySelector("#integratedStudentDetails");
-    var askButton=shell.querySelector("#integratedSelectionAi");
-    if(!copy||!map||!diagnosis||!studentDetails||!askButton)return;
-    var studentHighlightTimer=0,selectedText="";
+    if(!copy||!map||!diagnosis||!studentDetails)return;
+    var studentHighlightTimer=0;
     function activateQuestion(number){
       if(typeof diagnosis._selectQuestion==="function"){
         diagnosis._selectQuestion(String(number||"1"),false,true);
@@ -3306,34 +3295,6 @@ body.is-learning-map-fullscreen{overflow:hidden}
         highlightStudentRows([button.dataset.summaryStudent]);
       });
     });
-    function nodeInsideCopy(node){return !!node&&(node===copy||copy.contains(node.nodeType===1?node:node.parentNode))}
-    function hideAskButton(){askButton.hidden=true}
-    function updateAskButton(){
-      var selection=window.getSelection();
-      if(!selection||selection.isCollapsed||!selection.rangeCount||!nodeInsideCopy(selection.anchorNode)||!nodeInsideCopy(selection.focusNode)){hideAskButton();return}
-      selectedText=selection.toString().replace(/\s+/g," ").trim();
-      if(selectedText.length<2){hideAskButton();return}
-      var rect=selection.getRangeAt(0).getBoundingClientRect();
-      if(!rect.width&&!rect.height){hideAskButton();return}
-      askButton.hidden=false;
-      var left=Math.max(8,Math.min(window.innerWidth-askButton.offsetWidth-8,rect.left+rect.width/2-askButton.offsetWidth/2));
-      var top=Math.max(8,rect.top-askButton.offsetHeight-9);
-      askButton.style.left=left+"px";
-      askButton.style.top=top+"px";
-    }
-    copy.addEventListener("mouseup",function(){setTimeout(updateAskButton,0)});
-    copy.addEventListener("keyup",function(){setTimeout(updateAskButton,0)});
-    askButton.addEventListener("pointerdown",function(event){event.preventDefault()});
-    askButton.addEventListener("click",function(){
-      if(!selectedText)return;
-      shell.dispatchEvent(new CustomEvent("summary-ask-ai",{detail:{text:selectedText}}));
-      hideAskButton();
-      var selection=window.getSelection();
-      if(selection)selection.removeAllRanges();
-    });
-    document.addEventListener("pointerdown",function(event){if(event.target!==askButton&&!copy.contains(event.target))hideAskButton()});
-    window.addEventListener("scroll",hideAskButton,true);
-    window.addEventListener("resize",hideAskButton);
   }());
 
   (function initIntegratedOverview(){
@@ -3473,32 +3434,21 @@ body.is-learning-map-fullscreen{overflow:hidden}
 }());
 </script>
 <div id="pinmarkReviewToolbar" data-pinmark-ui aria-label="PinMark 标注操作">
-  <strong class="pinmark-review-title">班级作业学情 · 产品标注</strong>
-  <button class="pinmark-current-product-button" id="pinmarkCurrentProductButton" type="button">当前产品现状</button>
+  <strong class="pinmark-review-title">单次作业-班级与学生学情</strong>
+  <button class="pinmark-current-product-button" id="pinmarkCurrentProductButton" type="button">需求背景</button>
 </div>
 <aside id="pinmarkProductNotes" class="pm-panel pm-floating" data-pinmark-ui aria-label="产品逻辑与评审记录"></aside>
 <div class="pinmark-current-product-modal" id="pinmarkCurrentProductModal" data-pinmark-ui role="dialog" aria-modal="true" aria-labelledby="pinmarkCurrentProductTitle" hidden>
   <section class="pinmark-current-product-dialog">
     <header class="pinmark-current-product-head">
-      <h2 class="pinmark-current-product-title" id="pinmarkCurrentProductTitle">当前产品现状</h2>
+      <h2 class="pinmark-current-product-title" id="pinmarkCurrentProductTitle">需求背景</h2>
       <button class="pinmark-current-product-close" id="pinmarkCurrentProductClose" type="button" aria-label="关闭当前产品现状">×</button>
     </header>
     <div class="pinmark-current-product-body"><img class="pinmark-current-product-image" src="assets/current-product/class-homework-learning-status.png" alt="班级单次作业学情当前产品现状"></div>
   </section>
 </div>
 <script>
-(function initCurrentProductState(){
-  var trigger=document.getElementById("pinmarkCurrentProductButton");
-  var modal=document.getElementById("pinmarkCurrentProductModal");
-  var close=document.getElementById("pinmarkCurrentProductClose");
-  if(!trigger||!modal||!close)return;
-  function openModal(){modal.hidden=false;document.body.classList.add("pinmark-current-product-open");requestAnimationFrame(function(){close.focus()})}
-  function closeModal(){modal.hidden=true;document.body.classList.remove("pinmark-current-product-open");trigger.focus()}
-  trigger.addEventListener("click",openModal);
-  close.addEventListener("click",closeModal);
-  modal.addEventListener("click",function(event){if(event.target===modal)closeModal()});
-  document.addEventListener("keydown",function(event){if(event.key==="Escape"&&!modal.hidden)closeModal()});
-}());
+// 需求背景和需求分析由共用 PRD 工具栏管理。
 </script>
 <!-- PINMARK_DATA_START -->
 <script id="pinmarkEmbeddedData" type="application/json" data-encoding="base64">eyJwcm9kdWN0cyI6W3siaWQiOiJwYWdlLXBhdGgtYWN0aW9ucyIsIm51bWJlciI6IjEiLCJ0aXRsZSI6IuWvvOiIquagjyIsInBvaW50cyI6WyLot6/lvoTlm7rlrprlsZXnpLrvvJrpppbpobUgPiDkvZzkuJrkuI7ogIPor5UgPiDlrabmg4XjgIIiLCLmn6XnnIvmibnmlLnov5vlhaXlvZPliY3kvZzkuJrnmoTmibnmlLnor6bmg4XvvJvljrvorrLor4TjgIHljrvnu4PkuaDov5vlhaXlr7nlupTku7vliqHjgIIiLCLmm7TlpJrmk43kvZzkvp3mrKHmj5DkvpvvvJrkuIvovb3popjljZXpmYTku7bjgIHmn6XnnIvorqLmraPor6bmg4XjgIHlgqzkuqTlrabnlJ/kvZzkuJrjgIHkuIvovb3lrabnlJ/kvZzkuJrjgIHlr7zlh7rlrabnlJ/mmI7nu4bjgIIiLCLmk43kvZzkuI3lj6/nlKjml7bnva7ngbDlubbor7TmmI7ljp/lm6DvvJvor7fmsYLlpLHotKXmj5DnpLrigJzmk43kvZzlpLHotKXvvIzor7fnqI3lkI7ph43or5XigJ3jgIIiXSwic2VsZWN0b3IiOiIjbGFuZGluZ1NjcmVlbj5tYWluOm50aC1vZi10eXBlKDEpPm5hdjpudGgtb2YtdHlwZSgxKSIsIngiOjAuNDgwOTQzNzM4NjU2OTg3MywieSI6MC40NDQ0NDQ0NDQ0NDQ0NDQ0LCJ0ZXh0IjoiMS4xIOmdouWMheWxke+8mummlumhtT7kvZzkuJrkuI7ogIPor5U+54+t57qn5a2m5oOFXG4xLjIg5Li75oyJ6ZKu77ya5LuO5bem5Yiw5Y+z5L6d5qyh5Li6IOafpeeci+aJueaUueOAgeWOu+iusuivhOOAgeWOu+e7g+S5oOOAgemakOiXj+iPnOWNleOAglxuIFxuMS4yLjHngrnlh7vmn6XnnIvmibnmlLnvvJrot7PovazmibnmlLnpobXpnaLvvIzpu5jorqTpgInmi6nmjInpopjmn6XnnIvvvIzlj7PkvqfpgInmi6nmn6XnnIvmraPnoa7vvJtcbjEuMi4y54K55Ye75Y676K6y6K+E77ya6Lez6L2s6K6y6K+E6aG16Z2i77yM6buY6K6k6YCJ5Lit56ys5LiA6aKY77ybXG4xLjIuM+eCueWHu+WOu+e7g+S5oO+8mui3s+i9rOS4quaAp+WMlue7g+S5oOmhtemdou+8jOm7mOiupOmAieS4reePree6p+WFseaAp+e7g+S5oO+8jOe7g+S5oOetlueVpemAieaLqeaMiemUmeWboOe7g+S5oOOAglxuMS4yLjTngrnlh7vpmpDol4/oj5zljZXvvJpcbuaOkuW6j++8muS7juS4iuWIsOS4i+S+neasoeS4uuS4i+i9vemimOWNlemZhOS7tu+8jOafpeeci+iuouato+ivpuaDhe+8jOWCrOS6pOWtpueUn+S9nOS4mu+8jOS4i+i9veWtpueUn+S9nOS4mu+8jOWvvOWHuuWtpueUn+aYjue7hlxu54K55Ye75LiL6L296aKY5Y2V6ZmE5Lu277ya5by55Ye66ZmE5Lu25by556qX77yM5aSN55So5b2T5YmN54K55Ye76ZmE5Lu25oyJ6ZKu55qE5Lqk5LqS6YC76L6R77ybXG7ngrnlh7vmn6XnnIvorqLmraPor6bmg4XvvJrot7PovazorqLmraPpobXpnaLvvIzpu5jorqTpgInmi6nnrKzkuIDkuKrlrabnlJ/vvIzlpI3nlKjnur/kuIrvvJtcbueCueWHu+WCrOS6pOWtpueUn+S9nOS4mu+8muWFrOS8l+WPt+i/m+ihjOWCrOS6pO+8jOWkjeeUqOe6v+S4iuWCrOS6pOmAu+i+ke+8m1xu54K55Ye75LiL6L295a2m55Sf5L2c5Lia77ya5by55Ye65LiL6L295by556qX77yM5aSN55So57q/5LiK5a2m55Sf5L2c5Lia5oOF5Ya155qE5LiL6L295a2m55Sf5L2c5Lia5oyJ6ZKu77ybXG7ngrnlh7vlr7zlh7rlrabnlJ/mmI7nu4bvvJrlsIblrabnlJ/mmI7nu4bku6VleGNlbOW9ouW8j+WvvOWHuu+8jOWkjeeUqOe6v+S4iumAu+i+keS4jeWPmCIsImZyYW1lcyI6W10sImNvbnRleHRzIjpbImNsYXNzLWhvbWV3b3JrLWxlYXJuaW5nLXJlcG9ydDpub25lIl0sInN0YWdlIjoibm9uZSIsImNyZWF0ZWRBdCI6IjIwMjYtMDktMjJUMTI6MzY6MjIuMjI0WiIsInVwZGF0ZWRBdCI6IjIwMjYtMDktMjJUMTQ6MDk6NTAuNzk4WiJ9LHsiaWQiOiJsZWFybmluZy1vdmVydmlldyIsIm51bWJlciI6IjIiLCJ0aXRsZSI6IuWtpuaDheaAu+iniCAtIOWktOmDqCIsInBvaW50cyI6WyLlsZXnpLrlupTmj5DkuqTkurrmlbDjgIHlrp7mj5DkuqTkurrmlbDjgIHmj5DkuqTnjofjgIHlt7LmibnmlLnkvZznrZTph4/lkowgQUkg6K+K5pat54q25oCB44CCIiwi5pys5L6L5bqU5o+Q5LqkNDLkurrvvIzlrp7mj5DkuqQzNOS6uu+8iOe6pjgwJe+8ie+8jDM05Lu95L2c562U5Z2H5bey5a6M5oiQ5om55pS544CCIiwi54K55Ye74oCc5p+l55yL5YiG5p6Q6L+H56iL4oCd77yM5Zyo5oC76KeI57uT6K665LiK5pa55bGV5byA5oiW5pS26LW36K+K5pat5q2l6aqk77yb5YiG5p6Q55So5pe25bGV56S65Li6MuWIhjQ056eS44CCIiwi5a2m5oOF57uT6K665Z+65LqO5b2T5YmN5bey5o+Q5Lqk5L2c562U55Sf5oiQ77yb6K+K5pat5aSx6LSl5pe25pi+56S64oCc5a2m5oOF6K+K5pat55Sf5oiQ5aSx6LSl77yM6K+36YeN6K+V4oCd44CCIl0sInNlbGVjdG9yIjoiI2ludGVncmF0ZWRBaVN1bW1hcnlDYXJkIiwieCI6MC45OTUsInkiOjAuMDM1LCJzdGFnZSI6Im5vbmUiLCJ0ZXh0Ijoi5qCH6aKY77ya5a2m5oOF5oC76KeIXG7mlofmoYjvvJog5YiG5p6Q55So5pe2eOWIhnjnp5LCt+afpeeci+aAneiAg+i/h+eoi1xu5Lqk5LqS77ya54K55Ye75bGV5byA77yM5bCG5oCd6ICD6L+H56iL5Y6f5Zyw5aSN546wIiwiZnJhbWVzIjpbXSwiY3JlYXRlZEF0IjoiMjAyNi0wOS0yMlQxMzowNjoyMC40MjFaIiwidXBkYXRlZEF0IjoiMjAyNi0wOS0yM1QwODo1Mzo0NC4xOTZaIn0seyJpZCI6InN0dWRlbnQtcGVyZm9ybWFuY2UiLCJudW1iZXIiOiIzIiwidGl0bGUiOiLlrabmg4XmgLvop4ggLSDkuLvkvZMiLCJwb2ludHMiOlsi5bGV56S65b2T5YmN5bey5o+Q5Lqk5L2c562U55qE54+t57qn5bmz5Z2H5q2j56Gu546H5Y+K5L2O5LqO54+t57qn5bmz5Z2H55qE6YeN54K55YWz5rOo5a2m55Sf44CCIiwi5pys5L6L54+t57qn5bmz5Z2H5q2j56Gu546H5Li6Nzgl77yM6YeN54K55YWz5rOo6ZmI5LiA44CB5p2O5LqM44CB6YKT5LiJ44CCIiwi54K55Ye75a2m55Sf5aeT5ZCN77yM5a6a5L2N5bm26auY5Lqu5a2m55Sf5piO57uG5Lit5a+55bqU6K6w5b2V44CCIiwi5pqC5peg5pyJ5pWI5L2c562U5pe277yM5LiN6K6h566X5bmz5Z2H5q2j56Gu546H77yM5pi+56S64oCc5pqC5peg5Y+v5YiG5p6Q55qE5a2m55Sf5L2c562U4oCd44CCIl0sInNlbGVjdG9yIjoiI3Bpbm1hcmtTdHVkZW50UGVyZm9ybWFuY2UiLCJ4IjowLjk5LCJ5IjowLjQyLCJzdGFnZSI6Im5vbmUiLCJ0ZXh0IjoiMy4xIOaehOaIkO+8mkFJ5b2i6LGhICsg5a2m5oOF5byV5a+86K+tICsg6ZyA5YWz5rOo6aKY55uuICsg6ZyA5YWz5rOo5a2m55SfICsg6ZyA5YWz5rOo6ZSZ5Zug44CCXG5cbjMuMiDmj5DnpLror43vvJoxMjg1OO+8jOebruagh+aYr+WwhumZpOmcgOWFs+azqOmUmeWboOWklueahOe7n+iuoeivreiogOeUsUFJ55Sf5oiQ5LiA6YGN77yM6ZmN5L2O6KeE5YiZ5oSfXG4zLjIuMSDovpPlhaXvvJrop4Hmj5DnpLror41cbjMuMi4yIOi+k+WHuu+8muingeaPkOekuuivje+8jOmcgOS4i+WPkeWtpuaDheW8leWvvOivrStcbumcgOWFs+azqOmimOebrivpnIDlhbPms6jlrabnlJ8gM+S4quWtl+autVxuXG7ikaDlrabmg4XlvJXlr7zor61cbuato+aWh++8muW8uuiwg+aJueaUueaPkOS6pOaDheWGtVxu5piv5ZCm5b+F5LiL5Y+R77ya5pivXG5cbuKRoemcgOWFs+azqOmimOebrlxu5qCH6aKY77ya5Zu65a6a5Li644CM6ZyA5YWz5rOo6aKY55uu44CN77yM5qCH6aKY5LiN6ZyA6KaBQUnnlJ/miJBcbuato+aWh++8muW8uuiwg+aVmeW4iOW9k+S4i1Aw57qn5YWz5b+D5L+h5oGv77yM5pys5qyh6KaB6K6y6K+E5Yeg6YGT5YWx5oCn6ZSZ6aKY77yM5YiG5Yir5piv5ZOq5Lqb6aKYXG7kuqTkupLvvJrpopjlj7fpnIDopoHmlK/mjIHot7PovaxcbuaYr+WQpuW/heS4i+WPke+8muWQpu+8iOiLpUFJ5pyq6IO96L+U6L+Y5oiW6L+U5Zue5Li656m677yM5YiZ6K+l54K55LiN5bGV56S677yJXG5cbuKRoumcgOWFs+azqOWtpueUn++8mlxu5qCH6aKY77ya5Zu65a6a5Li644CM6ZyA5YWz5rOo5a2m55Sf44CN77yM5qCH6aKY5LiN6ZyA6KaBQUnnlJ/miJBcbuato+aWh++8muW8uuiwg+ihqOeOsOW3rueahOWtpueUnyjkvY7kuo7nj63nuqflubPlnYfmsLTlubMpICsg5LiO5Y6G5Y+y6L+RMuasoeebuOavlOaciXh4JeWHhuehrueOh+aPkOWNh+aIluS4i+mZjeeahOWtpueUn1xu5Lqk5LqS77ya5a2m55Sf6ZyA6KaB5pSv5oyB6Lez6L2sXG7mmK/lkKblv4XkuIvlj5HvvJrlkKbvvIjoi6VBSeacquiDvei/lOi/mOaIlui/lOWbnuS4uuepuu+8jOWImeivpeeCueS4jeWxleekuu+8iSIsImZyYW1lcyI6W10sImNyZWF0ZWRBdCI6IjIwMjYtMDktMjNUMDY6MTQ6MTIuNDQxWiIsInVwZGF0ZWRBdCI6IjIwMjYtMDktMjNUMDg6NTQ6MDYuNTQ3WiJ9LHsiaWQiOiJjYXVzZS1taW5kLW1hcCIsIm51bWJlciI6IjQiLCJ0aXRsZSI6IuWtpuaDheaAu+iniO+8jeWIhuaekOmDqOWIhu+8iOmUmeWboO+8iSIsInBvaW50cyI6WyLlsZXnpLrorqTnn6Xnjq/oioLjgIHkvZzkuJrpopjnm67jgIHlhbjlnovplJnlm6DlkozlhbjlnovkvZznrZTkuYvpl7TnmoTlhbPogZTjgIIiLCLmgJ3nu7Tlr7zlm77kv53nlZnni6znq4vngrnpmLXog4zmma/vvIzlhbbkvZnlrabmg4XmgLvop4jlhoXlrrnkvb/nlKjnmb3oibLog4zmma/jgIIiLCLngrnlh7vpopjnm67miJblhbjlnovkvZznrZToioLngrnmn6XnnIvlpKflm77vvJvlt6bkuIvop5LmlK/mjIHmlL7lpKfjgIHnvKnlsI/lkozov5jljp/jgIIiLCLml6Dlj6/lsZXnpLrlhbPogZTml7bvvIzkv53nlZnlrrnlmajpq5jluqblubbmmL7npLrigJzmmoLml6DlhbHmgKfplJnlm6DlhbPns7vigJ3jgIIiXSwic2VsZWN0b3IiOiIjaW50ZWdyYXRlZFN1bW1hcnlDYXJkIiwieCI6MC45OTUsInkiOjAuMDYsInN0YWdlIjoibm9uZSIsInRleHQiOiI0LjEg5p6E5oiQXG7nlLHmoIfpopggKyDmraPmlocgKyDplJnlm6Dlhajmma/lm74g5LiJ5Z2X5p6E5oiQXG7moIfpopjvvJrlm7rlrprkuLrigJzpnIDlhbPms6jplJnlm6DigJ3vvIzmoIfpopjkuI3pnIDopoFBSeeUn+aIkFxu6ZSZ5Zug5byV5a+86K+tXG7plJnlm6Dlhajmma/lm77vvJrnj63nuqflhbHmgKfplJnlm6AgKyDlhbHmgKfplJnpopggKyDlhbjlnovplJnlm6AgKyDlhbjlnovkvZznrZTvvIzku47lt6bliLDlj7Pkvp3mrKHlsZXnpLrkuIrov7Dlm5vnsbvlhoXlrrnvvIzlubbpgJrov4fov57nur/lsZXnpLrlhbPogZTlhbPns7vjgIJcbuaYr+WQpuW/heS4i+WPke+8muWQpu+8iOiLpUFJ5pyq6IO96L+U6L+Y5oiW6L+U5Zue5Li656m677yM5YiZ6K+l54K55LiN5bGV56S677yJXG5cbjQuMiDmj5DnpLror41cbklE77yaOS4zMOaXpeWJjeaPkOS+m+ePree6p+mUmeWboOiviuaWreaPkOekuuivjeefqemYtVxu6L6T5YWl77yaXG4xLiDmnKzmrKHkvZzkuJror4bliKvlh7rnmoTlhajpg6jlhbHmgKfplJnpopjvvIzljIXmi6zpopjnm67nvJblj7fjgIHpopjlj7fjgIHpopjnm67lhoXlrrnlkozmraPnoa7njofvvJtcbjIuIOavj+mBk+WFseaAp+mUmemimOeahOmAkOmimOiviuaWree7k+aenO+8jOWMheaLrOS4gOe6p+mUmeWboOOAgeS/ruato+WQjueahOWFuOWei+mUmeWboOOAgeWFuOWei+S9nOetlOWPiuWOn+acieWFs+iBlOWFs+ezu++8m1xuMy4g5Y+v55So5LqO5Yik5pat5LyY5YWI57qn55qE55+l6K+G5YWz57O777yb5peg5Y+v6Z2g55+l6K+G5YWz57O75pe25LiN5Lyg44CCXG7ovpPlh7rvvJpcbjEuIOmUmeWboOW8leWvvOivre+8m1xuMi4g6ZSZ5Zug5YWo5pmv5Zu+77ybXG4yLjEg54+t57qn5YWx5oCn6ZSZ5Zug5YiX6KGo77ya5pyA5aSa6L+U5ZueNOS4qu+8jOavj+S4quePree6p+WFseaAp+mUmeWboOWMheWQq+S7peS4i+WGheWuue+8mlxuMi4xLjEg6ZSZ5Zug57G75Yir77ya5a6h6aKY5oSf55+l44CB55+l6K+G5ZSk6YaS44CB5bu65qih6L2s5YyW44CB5o6o5ryU5rGC6Kej77yb57G75Yir5ZCN56ew5LuF55So5LqO5bGV56S677yM5LiN5Y+C5LiO5o6S5bqP5oiW5YWz6IGU77ybXG4yLjEuMiDplJnlm6DmraPmlofvvJtcbjIuMS4zIOWFuOWei+mUmeWboOWIl+ihqO+8muebuOWQjOmUmeivr+acuuWItui3qOmimOWQiOW5tuWQjuS7hei/lOWbnuS4gOS4quWFuOWei+mUmeWboO+8m+avj+S4quWFuOWei+mUmeWboOWMheWQq+S7peS4i+WGheWuue+8mlxuMi4xLjMuMSDlhbjlnovplJnlm6DlkI3np7DvvJtcbjIuMS4zLjIg5YWz6IGU55qE5YWx5oCn6ZSZ6aKYSUTvvJtcbjIuMS4zLjMg5YWz6IGU55qE5YW45Z6L5L2c562USUTvvIjlj6/og73kuLrnqbrvvIlcbuezu+e7n+e7hOijhe+8muagueaNruWFseaAp+mUmemimElE5ZKM5YW45Z6L5L2c562USUTooaXlhYXpopjnm67liIflm77jgIHlrabnlJ/kvZznrZTliIflm77vvIzlubbnu4Too4XoioLngrnkuI7ov57nur/jgIJcblxuNC4zIOmUmeWboOWFqOaZr+WbvlxuNC4zLjEg54+t57qn5YWx5oCn6ZSZ5ZugXG7mnaXmupDvvJrmj5DnpLror43ovpPlh7rvvJvluo/lj7fnlLHns7vnu5/mjInnhafov5Tlm57pobrluo/ooaXlhYXvvIzigJzlhbF46YGT6ZSZ6aKY4oCd55Sx57O757uf5qC55o2u5YWz6IGU55qE5YWx5oCn6ZSZ6aKY5pWw6YeP6K6h566X44CCXG7mnoTmiJDvvJrmoIfpopggKyDplJnlm6DmqKHlnZfvvIzmoIfpopjvvJrlm7rlrprkuLrigJznj63nuqflhbHmgKfplJnlm6DigJ3vvIzmqKHlnZfmnIDlpJrlsZXnpLo05Liq6ZSZ5Zug5qih5Z2X77yMXG7mqKHlnZfvvJrmnoTmiJAt5bqP5Y+3ICsg6ZSZ5Zug57G75YirICsg5YWxeOmBk+mUmemimCArIOato+aWh++8m+aOkuW6jy3mqKHlnZfmjInnhadBSei/lOWbnueahOmhuuW6j+Wxleekulxu6ZSZ5Zug57G75Yir5ZKM5q2j5paH55SxQUnnlJ/miJDvvJvluo/lj7fnlLHns7vnu5/mjInnhaflsZXnpLrpobrluo/ooaXlhYXvvIzigJzlhbF46YGT6ZSZ6aKY4oCd55Sx57O757uf5qC55o2u5a6e6ZmF5YWz6IGU6aKY55uu5pWw6K6h566X44CCXG40LjMuMiDlhbHmgKfplJnpophcbuadpea6kO+8muaPkOekuuivjei+k+WHuklE77yM56CU5Y+R6KGl5Zu+XG7mnoTmiJDvvJrpopjlj7cgKyDpopjnm67nvKnnlaXlm77jgIJcbuaOkuW6j++8muaMieWOn+mimOWPt+S7juWwj+WIsOWkp+aOkuWIl+OAglxuNC4zLjMg5YW45Z6L6ZSZ5ZugXG7mnaXmupDvvJrmj5DnpLror43ovpPlh7pcbjQuMy40IOWFuOWei+S9nOetlFxu5p2l5rqQ77ya5o+Q56S66K+N6L6T5Ye6SUTvvIznoJTlj5HooaXlm77kuI7lp5PlkI1cbuaehOaIkO+8muS9nOetlOe8qeeVpeWbviArIOWtpueUn+Wnk+WQjeOAglxuXG40LjQg5YWz6IGU5YWz57O7XG7lhajmma/lm77mjInnhafigJznj63nuqflhbHmgKfplJnlm6DigJTlhbHmgKfplJnpopjigJTlhbjlnovplJnlm6DigJTlhbjlnovkvZznrZTigJ3lu7rnq4vlrozmlbTlhbPogZTlhbPns7tcblxuNC41IOS6pOS6klxuaG92ZXLvvJrmgqzlgZzku7vkuIDoioLngrnvvIzpq5jkuq7lhbbmiYDlnKjnmoTlrozmlbTpk77ot6/vvJvnprvlvIDlkI7lj5bmtojpq5jkuq7vvIzng63ljLrkuLrljaHniYfljLrln59cbueCueWHu++8muWbuuWumuW9k+WJjeWujOaVtOmTvui3r++8jOWNs+KAnOePree6p+WFseaAp+mUmeWboOKAlOWFseaAp+mUmemimOKAlOWFuOWei+mUmeWboOKAlOWFuOWei+S9nOetlOKAne+8m+WGjeasoeeCueWHu+W9k+WJjeiKgueCueaIlueCueWHu+epuueZveWMuuWfn+WPlua2iO+8jOeCueWHu+WFtuS7luiKgueCueWIh+aNoumTvui3r++8jOWNoeeJh+mrmOS6ruaViOaenOingeiuvuiuoe+8m1xu54K55Ye75YWx5oCn6ZSZ6aKY77ya5Zu65a6a5a+55bqU6ZO+6Lev5bm25omT5byA5by556qX77yb5by556qX5qCH6aKY5Zu65a6a5Li64oCc5YWx5oCn6ZSZ6aKY4oCd77yM5Y+z5L6n5bGV56S65YWz6Zet5oyJ6ZKu77yM5q2j5paH5bGV56S66K+l6aKY55qE6aKY5bmy6KOB5YiH5Zu+44CCXG7ngrnlh7vlhbjlnovkvZznrZTvvJrlm7rlrprlr7nlupTpk77ot6/lubbmiZPlvIDlvLnnqpfvvJvlvLnnqpfmoIfpopjlm7rlrprkuLrigJzlhbjlnovkvZznrZTigJ3vvIzlj7PkvqflsZXnpLrlhbPpl63mjInpkq7vvIzpu5jorqTlsZXnpLrlvZPliY3ngrnlh7vnmoTlrabnlJ/kvZznrZTvvJvlrZjlnKjlpJrkuKrlhbjlnovkvZznrZTml7bvvIzmlK/mjIHlnKjlvLnnqpflhoXliIfmjaLmn6XnnIvjgIJcbuWFs+mXreW8ueeql++8mui/lOWbnuaJk+W8gOW8ueeql+WJjeeahOS9jee9ruS4juavlOS+i++8jOS/neeVmeW9k+WJjeWbuuWumumTvui3r+OAglxuXG40LjYg5bel5YW3XG7mlL7lpKcv57yp5bCP77ya6LCD5pW05YWo5pmv5Zu+5p+l55yL5q+U5L6L44CCXG7lvZLmraPvvJrmgaLlpI3pu5jorqTmr5TkvovkuI7kvY3nva7vvIzlubbmuIXpmaTpq5jkuq7nirbmgIHjgIJcbuWkp+Wxj+afpeeci++8muWFqOWxj+WxleekuuWujOaVtOWFqOaZr+Wbvu+8m+mAgOWHuuWQjuaBouWkjeWOn+S9jee9ruS4juavlOS+i+OAglxuXG40Ljcg6buY6K6k5bGV56S6XG7pu5jorqTlrozmlbTlsZXnpLrnj63nuqflhbHmgKfplJnlm6DljLrln5/vvIzkuI3pgInkuK3ku7vkvZXoioLngrnjgIJcbuWFqOmDqOi/nue6v+m7mOiupOS9v+eUqOeBsOiJsue7hue6v+OAglxu6IqC54K55oyJ54Wn4oCc54+t57qn5YWx5oCn6ZSZ5Zug4oCU5YWx5oCn6ZSZ6aKY4oCU5YW45Z6L6ZSZ5Zug4oCU5YW45Z6L5L2c562U4oCd5LuO5bem5Yiw5Y+z5o6S5YiX77yb6LaF5Ye66IyD5Zu05pe25Y+v6YCa6L+H5bel5YW357un57ut5p+l55yL44CCXG7lhajpg6jlhbjlnovplJnlm6DlnYfml6DlhbjlnovkvZznrZTml7bvvIzpmpDol4/igJzlhbjlnovkvZznrZTigJ3liJflj4rmoIfpopjvvIzlhajmma/lm77mjInnhafliY3kuInliJfoh6rpgILlupTlsZXnpLrjgIJcblxuNC44IOW8guW4uOS4juepuueKtuaAgVxuNC44LjEg6LCD55So5YmN5Yik5patXG40LjguMS4xIOaXoOePree6p+WFseaAp+mUmemimO+8muS4jeiwg+eUqDQuMuaPkOekuuivje+8jOS4jeWxleekuuKAnOmcgOWFs+azqOmUmeWboOKAneWPiumUmeWboOWFqOaZr+WbvlxuNC44LjEuMiDpgJDpopjor4rmlq3mnKrlrozmiJDmiJbph43or5XlkI7mnIkxMCXnmoTlhbHmgKfplJnpopjnlJ/miJDlpLHotKXvvJrkuI3osIPnlKg0LjLmj5DnpLror43vvIzkuI3lsZXnpLrmnKzmqKHlnZfjgIJcbjQuOC4yIOaXoOWFuOWei+S9nOetlFxuNC44LjIuMSDpg6jliIblhbjlnovplJnlm6Dml6Dlj6/pnaDlhbjlnovkvZznrZTvvJrlr7nlupTpk77ot6/mraLkuo7lhbjlnovplJnlm6DvvIzkuI3lsZXnpLrlhbjlnovkvZznrZToioLngrnlj4rov57nur/jgIJcbjQuOC4yLjIg5YWo6YOo5YW45Z6L6ZSZ5Zug5Z2H5peg5Y+v6Z2g5YW45Z6L5L2c562U77ya5L+d55WZ5YmN5LiJ5bGC6ZO+6Lev77yM6ZqQ6JeP4oCc5YW45Z6L5L2c562U4oCd5YiX5Y+K5qCH6aKY44CCIiwiZnJhbWVzIjpbXSwiY3JlYXRlZEF0IjoiMjAyNi0wOS0yM1QwNjoxNDozMi4wMTZaIiwidXBkYXRlZEF0IjoiMjAyNi0wOS0yM1QxMzo0ODoxMS44MDJaIiwiY29udGVudFJldmlzaW9uIjoiY2F1c2UtbWFwLXByZC0yMDI2MDkyMy12MSJ9LHsiaWQiOiJxdWVzdGlvbi1kaWFnbm9zaXMiLCJudW1iZXIiOiI1IiwidGl0bGUiOiLpgJDpopjor4rmlq0iLCJwb2ludHMiOlsiNS4xIOaehOaIkCIsIuW3puS+p+WvvOiIqiArIOWPs+S+p+WGheWuuSIsIiIsIjUuMiDlr7zoiKoiLCLmnoTmiJDvvJrlkIznur/kuIrvvIzpoph4IOato+ehrueOhyB4eCXvvJvlt67lvILngrnmmK/vvIzlpoLmnpzov5npgZPpopjmmK/lhbHmgKfplJnpopjvvIzlt6bkuIrop5LpnIDopoHliqDlhbHmgKfplJnpopjmoIfnrb4iLCIiLCI1LjMg5YaF5a65Iiwi5Lqk5LqS77ya5pSv5oyB57q15ZCR5peg6ZmQ5LiL5ruR77yM5bem5L6ndGFi5a+55bqU5YiH5o2iIiwi5p6E5oiQ77ya57qv6aKY55uu77yM6aKY55uu55Sx5Lul5LiL5p6E5oiQIiwiIiwi4pGg6aKY5bmy77ya5bGV56S66aKY5bmy77yM5ZCM57q/5LiKIiwi4pGh55+l6K+G54K55LiO6IO95Yqb77ya5bGV56S65pys6aKY5a+55bqU55qE55+l6K+G54K55LiO6IO95Yqb44CC5pys5pyf5bCG4oCc562U5qGI6Kej5p6Q4oCd5YWl5Y+j5LiO55+l6K+G54K55pS+5Zyo5ZCM5LiA5o6S5pyA5pyr5bC+77yM5Lul5paH5qGI4oCc562U5qGI6Kej5p6Q4oCd5bGV56S644CC54K55Ye75ZCO5by55Ye6562U5qGI6Kej5p6Q5by556qX77yM5by556qX5YaF5bGV56S66aKY5bmy5LiO5a6M5pW0562U5qGI6Kej5p6Q77yM5LiN5bGV56S657yp55Wl54mI562U5qGI44CCIiwi4pGi5qC45b+D57Sg5YW777ya5bGV56S65pys6aKY5a+55bqU55qE5qC45b+D57Sg5YW777yb5peg5pWw5o2u5pe25LiN5bGV56S66K+l6aG544CCIiwi4pGj5L2c562U5YiG5biDIiwi6Iul5b2V5YWl6aKY5Z6L5Li66YCJ5oup77ya5bGV56S64oCc6YCJ6aG5ICsg5Lq65pWwICsg5a2m55Sf5aeT5ZCN4oCd44CC6YCJ6aG55YyF5ousIEHjgIFC44CBQ+OAgUQg5Y+K5pyq5L2c562U77yb5q+P57uE6YCJ6aG55pyA5aSa5bGV56S6MuS9jeWtpueUn+Wnk+WQje+8jOi2hei/h+mDqOWIhuS7peKAnCt44oCd5bGV56S644CC5L6L77yaQSA35Lq6IOS6juWNg+eUu+OAgeWImOS/ium+mSArNe+8m0IgM+S6uiDlj7LkuZDlvaTjgIHoo7TlrZDmg6AgKzHvvJtDIDXkurog5Y+y5LmQ5b2k44CB6KO05a2Q5oOgICsy77ybRCAyOeS6uiDlj7LkuZDlvaTjgIHoo7TlrZDmg6AgKzI377yb5pyq5L2c562UIHjkurogeHjjgIF4eCAreHjjgIJob3ZlcuWtpueUn+Wnk+WQjeaXtuWxleekuua1rueql++8jOa1rueql+WGheWxleekuuivpemAiemhueS4i+eahOWFqOmDqOWtpueUn+Wnk+WQjeOAgiIsIiIsIuiLpeW9leWFpemimOWei+S4uuWhq+epuu+8muaMieeFp+KAnOato+ehruOAgemUmeivr+OAgeacquS9nOetlOKAneS4ieexu+WxleekuuKAnOS9nOetlOeKtuaAgSArIOS6uuaVsCArIOWtpueUn+Wnk+WQjeKAne+8jOS4jeWxleekuueZvuWIhuavlOOAguavj+exu+acgOWkmuWxleekujLkvY3lrabnlJ/lp5PlkI3vvIzotoXov4fpg6jliIbku6XigJwreOKAneWxleekuu+8m+S+i++8muato+ehriAxOOS6uiDpmYjkuIDjgIHliJjnpLzlroEgKzE277yb6ZSZ6K+vIDIx5Lq6IOadjuS6jOOAgemCk+S4iSArMTnvvJvmnKrkvZznrZQgM+S6uiDmrKfpmLPlh4zokLHjgIHlvKDlkK/oiKogKzHjgIJob3ZlcuWtpueUn+Wnk+WQjeaXtuWxleekuua1rueql++8jOa1rueql+WGheWxleekuuivpeeKtuaAgeS4i+eahOWFqOmDqOWtpueUn+Wnk+WQjeOAgiIsIiIsIuiLpeW9leWFpemimOWei+S4uuWkmumXrumimOebru+8muaMieeFp+Wwj+mXrumhuuW6j+S+neasoeWxleekuuOAguavj+S4quWwj+mXruWxleekuuKAnOWwj+mXruW6j+WPtyArIOato+ehrueOh+KAne+8jOW5tuaMieeFp+KAnOato+ehruOAgemUmeivr+OAgeacquS9nOetlOKAneS4ieexu+WIhuWIq+WxleekuuKAnOS9nOetlOeKtuaAgSArIOS6uuaVsCArIOWtpueUn+Wnk+WQjeKAneOAguavj+exu+acgOWkmuWxleekujLkvY3lrabnlJ/lp5PlkI3vvIzotoXov4fpg6jliIbku6XigJwreOKAneWxleekuu+8m2hvdmVy5a2m55Sf5aeT5ZCN5pe25bGV56S66K+l57G755qE5a6M5pW05ZCN5Y2V44CC5q+P5Liq5bCP6Zeu55qE6ZSZ5Zug5ZKM5YW45Z6L5L2c562U6Lef6ZqP6K+l5bCP6Zeu5bGV56S677yM5LiN5ZCI5bm25Yiw5pW06YGT6aKY5LiL44CC5L6L77ya77yIMe+8ieato+ehrueOhyAxNyXvvJvmraPnoa4gMTLkurog5paH5b+D5qOL44CB5r2Y5Yab6L+QICsxMO+8m+mUmeivryAxNuS6uiDlkajlrZDmtanjgIHmnY7kuowgKzE077yb5pyq5L2c562UIDE25Lq6IOasp+mYs+WHjOiQseOAgeW8oOWQr+iIqiArMTTjgIIiLCIiLCLikaTplJnlm6Dmg4XlhrUiLCLmnaXmupDvvJrnj63nuqfljZXpopjplJnlm6Dor4rmlq3mj5DnpLror43kuIvlj5HvvIzku4XlhbHmgKfplJnpopjlj6/osIPnlKjmj5DnpLror43vvIzpnZ7lhbHmgKfplJnpopjku4XlsZXnpLrnu5/orqHmg4XlhrUiLCLmnoTmiJDvvJrlhbjlnovplJnlm6AgKyDplJnlm6DmraPmlocgKyDlhbjlnovkvZznrZTvvJsiLCLlhbjlnovplJnlm6DvvJpBSeS4i+WPkeS4pOS4qumUmeWboO+8jOWFuOWei+mUmeWboOWwseWxleekuuS4pOS4qumUmeWboOagh+etvu+8jOWmguWFuOWei+mUmeWboDEgeHh477yb5YW45Z6L6ZSZ5ZugMiB4eHjvvJvoi6XmnKrkuIvlj5HvvIzliJnkuI3lsZXnpLoiLCLplJnlm6DmraPmlofvvJrku6VBSeS4i+WPkeS4uuS4uyIsIuWFuOWei+S9nOetlO+8muaXoOi/h+eoi+ivgeaNrumimOWmgumAieaLqeWhq+epuuayoeacieWFuOWei+S9nOetlOOAguaciei/h+eoi+ivgeaNrumimOS4i+WPkeWFuOWei+S9nOetlO+8jOaVsOmHj+S4ujAtMuS4quOAguS4i+WPkeW9ouW8j+aYr+WtpueUn0lE77yM5YmN5ZCO56uv6Ieq5Yqo5YWz6IGU5a2m55Sf5L2c562U5YiH5Zu+77yb54K55Ye75YW45Z6L5L2c562U5Y+v5pS+5aSn5p+l55yL44CCIl0sInNlbGVjdG9yIjoiI2ludGVncmF0ZWRRdWVzdGlvbkRpYWdub3NpcyIsIngiOjAuOTk1LCJ5IjowLjA0NSwidGV4dCI6IjUuMSDmnoTmiJBcbuW3puS+p+WvvOiIqiArIOWPs+S+p+WGheWuuVxuXG41LjIg5a+86IiqXG7mnoTmiJDvvJrlkIznur/kuIrvvIzpoph4IOato+ehrueOhyB4eCXvvJvlt67lvILngrnmmK/vvIzlpoLmnpzov5npgZPpopjmmK/lhbHmgKfplJnpopjvvIzlt6bkuIrop5LpnIDopoHliqDlhbHmgKfplJnpopjmoIfnrb5cblxuNS4zIOWGheWuuVxu5Lqk5LqS77ya5pSv5oyB57q15ZCR5peg6ZmQ5LiL5ruR77yM5bem5L6ndGFi5a+55bqU5YiH5o2iXG7mnoTmiJDvvJrnuq/popjnm67vvIzpopjnm67nlLHku6XkuIvmnoTmiJBcblxu4pGg6aKY5bmy77ya5bGV56S66aKY5bmy77yM5ZCM57q/5LiKXG7ikaHnn6Xor4bngrnkuI7og73lipvvvJrlsZXnpLrmnKzpopjlr7nlupTnmoTnn6Xor4bngrnkuI7og73lipvjgILmnKzmnJ/lsIbigJznrZTmoYjop6PmnpDigJ3lhaXlj6PkuI7nn6Xor4bngrnmlL7lnKjlkIzkuIDmjpLmnIDmnKvlsL7vvIzku6XmlofmoYjigJznrZTmoYjop6PmnpDigJ3lsZXnpLrjgILngrnlh7vlkI7lvLnlh7rnrZTmoYjop6PmnpDlvLnnqpfvvIzlvLnnqpflhoXlsZXnpLrpopjlubLkuI7lrozmlbTnrZTmoYjop6PmnpDvvIzkuI3lsZXnpLrnvKnnlaXniYjnrZTmoYjjgIJcbuKRouaguOW/g+e0oOWFu++8muWxleekuuacrOmimOWvueW6lOeahOaguOW/g+e0oOWFu++8m+aXoOaVsOaNruaXtuS4jeWxleekuuivpemhueOAglxu4pGj5L2c562U5YiG5biDXG7oi6XlvZXlhaXpopjlnovkuLrpgInmi6nvvJrlsZXnpLrigJzpgInpobkgKyDkurrmlbAgKyDlrabnlJ/lp5PlkI3igJ3jgILpgInpobnljIXmi6wgQeOAgULjgIFD44CBRCDlj4rmnKrkvZznrZTvvJvmr4/nu4TpgInpobnmnIDlpJrlsZXnpLoy5L2N5a2m55Sf5aeT5ZCN77yM6LaF6L+H6YOo5YiG5Lul4oCcK3jigJ3lsZXnpLrjgILkvovvvJpBIDfkurog5LqO5Y2D55S744CB5YiY5L+K6b6ZICs177ybQiAz5Lq6IOWPsuS5kOW9pOOAgeijtOWtkOaDoCArMe+8m0MgNeS6uiDlj7LkuZDlvaTjgIHoo7TlrZDmg6AgKzLvvJtEIDI55Lq6IOWPsuS5kOW9pOOAgeijtOWtkOaDoCArMjfvvJvmnKrkvZznrZQgeOS6uiB4eOOAgXh4ICt4eOOAgmhvdmVy5a2m55Sf5aeT5ZCN5pe25bGV56S65rWu56qX77yM5rWu56qX5YaF5bGV56S66K+l6YCJ6aG55LiL55qE5YWo6YOo5a2m55Sf5aeT5ZCN44CCXG5cbuiLpeW9leWFpemimOWei+S4uuWhq+epuu+8muaMieeFp+KAnOato+ehruOAgemUmeivr+OAgeacquS9nOetlOKAneS4ieexu+WxleekuuKAnOS9nOetlOeKtuaAgSArIOS6uuaVsCArIOWtpueUn+Wnk+WQjeKAne+8jOS4jeWxleekuueZvuWIhuavlOOAguavj+exu+acgOWkmuWxleekujLkvY3lrabnlJ/lp5PlkI3vvIzotoXov4fpg6jliIbku6XigJwreOKAneWxleekuu+8m+S+i++8muato+ehriAxOOS6uiDpmYjkuIDjgIHliJjnpLzlroEgKzE277yb6ZSZ6K+vIDIx5Lq6IOadjuS6jOOAgemCk+S4iSArMTnvvJvmnKrkvZznrZQgM+S6uiDmrKfpmLPlh4zokLHjgIHlvKDlkK/oiKogKzHjgIJob3ZlcuWtpueUn+Wnk+WQjeaXtuWxleekuua1rueql++8jOa1rueql+WGheWxleekuuivpeeKtuaAgeS4i+eahOWFqOmDqOWtpueUn+Wnk+WQjeOAglxuXG7oi6XlvZXlhaXpopjlnovkuLrlpJrpl67popjnm67vvJrmjInnhaflsI/pl67pobrluo/kvp3mrKHlsZXnpLrjgILmr4/kuKrlsI/pl67lsZXnpLrigJzlsI/pl67luo/lj7cgKyDmraPnoa7njofigJ3vvIzlubbmjInnhafigJzmraPnoa7jgIHplJnor6/jgIHmnKrkvZznrZTigJ3kuInnsbvliIbliKvlsZXnpLrigJzkvZznrZTnirbmgIEgKyDkurrmlbAgKyDlrabnlJ/lp5PlkI3igJ3jgILmr4/nsbvmnIDlpJrlsZXnpLoy5L2N5a2m55Sf5aeT5ZCN77yM6LaF6L+H6YOo5YiG5Lul4oCcK3jigJ3lsZXnpLrvvJtob3ZlcuWtpueUn+Wnk+WQjeaXtuWxleekuuivpeexu+eahOWujOaVtOWQjeWNleOAguavj+S4quWwj+mXrueahOmUmeWboOWSjOWFuOWei+S9nOetlOi3n+maj+ivpeWwj+mXruWxleekuu+8jOS4jeWQiOW5tuWIsOaVtOmBk+mimOS4i+OAguS+i++8mu+8iDHvvInmraPnoa7njocgMTcl77yb5q2j56GuIDEy5Lq6IOaWh+W/g+aji+OAgea9mOWGm+i/kCArMTDvvJvplJnor68gMTbkurog5ZGo5a2Q5rWp44CB5p2O5LqMICsxNO+8m+acquS9nOetlCAxNuS6uiDmrKfpmLPlh4zokLHjgIHlvKDlkK/oiKogKzE044CCXG5cbuKRpOmUmeWboOaDheWGtVxu5p2l5rqQ77ya54+t57qn5Y2V6aKY6ZSZ5Zug6K+K5pat5o+Q56S66K+N5LiL5Y+R77yM5LuF5YWx5oCn6ZSZ6aKY5Y+v6LCD55So5o+Q56S66K+N77yM6Z2e5YWx5oCn6ZSZ6aKY5LuF5bGV56S657uf6K6h5oOF5Ya1XG7mnoTmiJDvvJrlhbjlnovplJnlm6AgKyDplJnlm6DmraPmlocgKyDlhbjlnovkvZznrZTvvJtcbuWFuOWei+mUmeWboO+8mkFJ5LiL5Y+R5Lik5Liq6ZSZ5Zug77yM5YW45Z6L6ZSZ5Zug5bCx5bGV56S65Lik5Liq6ZSZ5Zug5qCH562+77yM5aaC5YW45Z6L6ZSZ5ZugMSB4eHjvvJvlhbjlnovplJnlm6AyIHh4eO+8m+iLpeacquS4i+WPke+8jOWImeS4jeWxleekulxu6ZSZ5Zug5q2j5paH77ya5LulQUnkuIvlj5HkuLrkuLtcbuWFuOWei+S9nOetlO+8muaXoOi/h+eoi+ivgeaNrumimOWmgumAieaLqeWhq+epuuayoeacieWFuOWei+S9nOetlOOAguaciei/h+eoi+ivgeaNrumimOS4i+WPkeWFuOWei+S9nOetlO+8jOaVsOmHj+S4ujAtMuS4quOAguS4i+WPkeW9ouW8j+aYr+WtpueUn0lE77yM5YmN5ZCO56uv6Ieq5Yqo5YWz6IGU5a2m55Sf5L2c562U5YiH5Zu+77yb54K55Ye75YW45Z6L5L2c562U5Y+v5pS+5aSn5p+l55yL44CCIiwiZnJhbWVzIjpbXSwiY29udGVudFJldmlzaW9uIjoicXVlc3Rpb24tZGlhZ25vc2lzLXByZC0yMDI2MDkyMy12MSJ9LHsiaWQiOiJzdHVkZW50LWRldGFpbHMiLCJudW1iZXIiOiI2IiwidGl0bGUiOiLlrabnlJ/mmI7nu4YiLCJwb2ludHMiOlsi6KGo5qC85bGV56S677ya5a2m55Sf44CB5piv5ZCm5o+Q5Lqk44CB5piv5ZCm5om55pS544CB5piv5ZCm6K6i5q2j44CB5q2j56Gu546H44CB6ZSZ6aKY44CB5o+Q5Lqk5pe26Ze05ZKM5pON5L2c44CCIiwi6ZSZ6aKY5Y+q57K+56Gu5Yiw5aSn6aKY6aKY5Y+377yb5pyq5o+Q5Lqk5oiW5peg5pWw5o2u55qE5a2X5q615pi+56S64oCcLS3igJ3miJbigJwt4oCd44CCIiwi54K55Ye75oC76KeI5Lit55qE6YeN54K55YWz5rOo5a2m55Sf77yM6Ieq5Yqo5rua5Yqo5Yiw6K+l5a2m55Sf6KGM5bm255+t5pqC6auY5Lqu44CCIiwi5pCc57Si5a2m55Sf5aeT5ZCN5Zyo5b2T5YmNIGRlbW8g5Lit5LuF5Li66KeG6KeJ5Y2g5L2N77yb5q2j5byP5Lqn5ZOB6ZyA5aSN55So57q/5LiK5pCc57Si57uE5Lu25bm25pSv5oyB5peg57uT5p6c54q25oCB44CCIl0sInNlbGVjdG9yIjoiI2ludGVncmF0ZWRTdHVkZW50RGV0YWlscyIsIngiOjAuOTk1LCJ5IjowLjA1NSwidGV4dCI6Iuagh+mimO+8muWtpueUn+aYjue7hlxu5pCc57Si77ya5pCc57Si5Yqf6IO95aSN55So57q/5LiKXG7ooajmoLzvvJrku47lt6bliLDlj7Pkvp3mrKHkuLrvvJrlrabnlJ/jgIHmmK/lkKbmj5DkuqTjgIHmmK/lkKbmibnmlLnjgIHmmK/lkKborqLmraPjgIHmraPnoa7njofjgIHplJnpopjjgIHmj5DkuqTml7bpl7Tlkozmk43kvZzvvIzmlofmoYjpobvkuI5QUkTkv53mjIHkuIDoh7Rcblxu5piv5ZCm5o+Q5Lqk77ya5bey5o+Q5Lqk77yM5pyq5o+Q5Lqk77yM5pyq5Lqk6b2QXG7mmK/lkKbmibnmlLnvvJrlt7LmibnmlLnvvIzmnKrmibnmlLlcbuaYr+WQpuiuouato++8muacquiuouato++8jOW3suiuouato++8jOaXoOmcgOiuouato1xu5q2j56Gu546H77ya5LiN5L+d55WZ5bCP5pWw77yM5ZCR5LiK5Y+W5pW0XG7plJnpopjvvJrku4XlsZXnpLrlpKfpopjnspLluqZcbuaPkOS6pOaXtumXtO+8muWkjeeUqFxu5pON5L2c77ya5aSW5pi+5p+l55yL5a2m5oOF44CB5p+l55yL5om55pS544CB6ZqQ6JeP6I+c5Y2V44CC6ZqQ6JeP6I+c5Y2V55Sx5LiK5Yiw5LiL5L6d5qyh5Li677ya5LiL6L295L2c5Lia44CB5Yig6Zmk5L2c5Lia44CB5p+l55yL6K6i5q2j44CB5Yig6Zmk6K6i5q2j77yM5Yqf6IO95ZCM57q/5LiKXG7ovrnnlYzmg4XlhrXvvJrml6DmlbDmja7ml7blsZXnpLrigJwtLeKAnSIsImZyYW1lcyI6W10sImNyZWF0ZWRBdCI6IjIwMjYtMDktMjNUMTI6NTY6MDAuNTY3WiIsInVwZGF0ZWRBdCI6IjIwMjYtMDktMjNUMTM6MTA6NDYuOTQ1WiJ9LHsic2VsZWN0b3IiOiIjaW50ZWdyYXRlZEFpU3VtbWFyeUNvcHk+ZGl2Om50aC1vZi10eXBlKDIpPnA6bnRoLW9mLXR5cGUoMSkiLCJmcmFtZXMiOltdLCJjb250ZXh0cyI6WyJjbGFzcy1ob21ld29yay1sZWFybmluZy1yZXBvcnQ6cmVxdWlyZWQiXSwieCI6MC42NjQ2MzQxNDYzNDE0NjM0LCJ5IjowLjc1LCJzdGFnZSI6InJlcXVpcmVkIiwiaWQiOiJwbS0xNzkwMTcyNTUxNzgwLXR5eWgybDg4ZTdwIiwibnVtYmVyIjoiNyIsInRpdGxlIjoi6ZyA5aSN5qC45Zy65pmvIiwidGV4dCI6IuaPkOS6pOeOh+S4jei2szgwJe+8jOaIluWRveS4reW7uuiuruaJueaUueWkjeaguOWcuuaZr++8jOS4jeaJp+ihjOeUn+aIkO+8jOebtOaOpei/m+WFpeWtpuaDheeVjOmdou+8jOWcqOWtpuaDheaAu+iniOi/m+ihjOaPkOmGkuOAgiIsImNyZWF0ZWRBdCI6IjIwMjYtMDktMjNUMTQ6MTE6MzkuNTcyWiIsInVwZGF0ZWRBdCI6IjIwMjYtMDktMjNUMTQ6MTE6MzkuNTcyWiJ9XSwicmV2aWV3cyI6W119</script>
@@ -3613,9 +3563,9 @@ window.PinMarkReviewConfig={
     {
       id:"page-path-actions", number:"1", title:"页面路径与操作区",
       points:[
-        "路径固定展示：首页 > 作业与考试 > 学情。",
+        "路径固定展示：首页 > AI批改 > 班级学情。",
         "查看批改、去讲评、去练习当前仅展示按钮，不支持点击跳转；需复核场景下，去讲评、去练习置灰禁用。",
-        "更多操作依次提供：下载题单附件、查看订正详情、催交学生作业。",
+        "更多操作依次提供：下载题单附件、查看订正详情、删除本次作业。删除本次作业当前仅展示入口，不执行实际删除；催交入口位于未提交学生名单浮层。",
         "操作不可用时置灰并说明原因；请求失败提示“操作失败，请稍后重试”。"
       ],
       selector:".integrated-learning-breadcrumb-trail", x:.98, y:.5
@@ -3623,8 +3573,8 @@ window.PinMarkReviewConfig={
     {
       id:"learning-overview", number:"2", title:"学情总览",
       points:[
-        "展示应提交人数、实提交人数、提交率、已批改作答量和 AI 诊断状态。",
-        "本例应提交42人，实提交34人（约80%），34份作答均已完成批改。",
+        "展示应提交人数、实提交人数、未提交学生和已批改作答量；hover未提交学生可查看完整提交名单与未提交名单。",
+        "本例应提交42人、实提交34人，欧阳凌萱、张启航等8人未提交；已提交的34份作答均已完成批改。浮层支持复制提交名单和催交未提交学生。",
         "“查看思考过程”当前仅展示文案，不支持展开；分析用时展示为2分44秒。需复核场景下不展示该区域。",
         "学情结论基于当前已提交作答生成；诊断失败时显示“学情诊断生成失败，请重试”。"
       ],
@@ -3635,7 +3585,7 @@ window.PinMarkReviewConfig={
       points:[
         "展示本次作业题目总数及已识别的班级共性错题，并同步展示对应正确率。",
         "本例共15道题，需关注题1（66%）、题2（43%）和题3（68%）。",
-        "点击题目及正确率，跳转并定位到逐题诊断中的对应题目。",
+        "点击题目及正确率，跳转并定位到题目诊断中的对应题目。",
         "未识别到班级共性错题时，显示“本次作业暂未发现需重点关注的共性错题”。"
       ],
       selector:"#pinmarkQuestionFocus", x:.99, y:.42, stage:"none"
@@ -3661,12 +3611,7 @@ window.PinMarkReviewConfig={
       selector:"#pinmarkCausePerformance", x:.99, y:.4, stage:"none"
     },
     {
-      id:"cause-mind-map", number:"4", title:"学情总览－分析部分（错因）",
-      points:window.PinMarkCauseMapApprovedText.split("\n"),
-      selector:"#integratedSummaryCard", x:.995, y:.06, stage:"none"
-    },
-    {
-      id:"question-diagnosis", number:"5", title:"逐题诊断",
+      id:"question-diagnosis", number:"5", title:"题目诊断",
       points:window.PinMarkQuestionDiagnosisApprovedText.split("\n"),
       selector:"#integratedQuestionDiagnosis", x:.995, y:.045
     },
@@ -3682,7 +3627,7 @@ window.PinMarkReviewConfig={
       selector:"#integratedQuestionPanel1", x:.995, y:.18
     },
     {
-      id:"student-details", number:"9", title:"学生明细",
+      id:"student-details", number:"9", title:"学生诊断",
       points:[
         "表格展示：学生、是否提交、是否批改、是否订正、正确率、错题、提交时间和操作。",
         "错题只精确到大题题号；未提交或无数据的字段显示“--”或“-”。",
@@ -3705,31 +3650,31 @@ window.PinMarkReviewConfig={
   ],
   migrateData:function(payload){
     var definitions=window.PinMarkReviewConfig.annotations||[];
-    var allowedNumbers={"page-path-actions":"1","learning-overview":"2","student-performance":"3","cause-mind-map":"4","question-diagnosis":"5","student-details":"6"};
+    var allowedNumbers={"page-path-actions":"1","learning-overview":"2","student-performance":"3","question-diagnosis":"5","student-details":"6"};
     var recoveredOverviewBody="3.1 构成：AI形象 + 引导语 + 学生表现 + 错因表现 及 错因全景图；其中除学生表现、错因表现为固定标题，其他内容均由AI生成，包含错因全景图内容\n\n3.2 提示词：12858\n3.2.1 输入：\n\n\n3.2.2 输出：\n①学情引导语\n②学生表现\n③错因表现\n下属字段1：错因引导语\n下属字段2：xxx";
-    var completedCauseMapText=window.PinMarkCauseMapApprovedText;
-    var completedCauseMapRevision="cause-map-prd-20260923-v1";
     var completedQuestionDiagnosisText=window.PinMarkQuestionDiagnosisApprovedText;
-    var completedQuestionDiagnosisRevision="question-diagnosis-prd-20260923-v1";
-    payload.products=payload.products||[];
-    Object.keys(allowedNumbers).forEach(function(id){
-      if(payload.products.some(function(item){return item.id===id}))return;
-      var definition=definitions.find(function(item){return item.id===id});
-      if(definition)payload.products.push(Object.assign({},definition,{text:(definition.points||[]).join("\n"),frames:[]}));
-    });
-    payload.products=payload.products.filter(function(item){return !!allowedNumbers[item.id]}).map(function(current){
+    var completedQuestionDiagnosisRevision="question-diagnosis-prd-20260930-v4";
+    var completedStudentDiagnosisRevision="student-diagnosis-prd-20260930-v3";
+    var completedPagePathActionsRevision="page-path-actions-prd-20261009-v2";
+    payload.products=(payload.products||[]).filter(function(item){return item.id!=="cause-mind-map"});
+    payload.products=payload.products.map(function(current){
       var definition=definitions.find(function(item){return item.id===current.id});
-      var migrated=Object.assign({},definition||{},current,{number:allowedNumbers[current.id]});
+      var migrated=Object.assign({},definition||{},current,{number:allowedNumbers[current.id]||current.number});
       if(!String(migrated.text||"").trim())migrated.text=current.id==="student-performance"?recoveredOverviewBody:(definition&&definition.points?definition.points.join("\n"):"");
-      if(current.id==="cause-mind-map"&&migrated.contentRevision!==completedCauseMapRevision){
-        migrated.title="学情总览－分析部分（错因）";
-        migrated.text=completedCauseMapText;
-        migrated.contentRevision=completedCauseMapRevision;
-      }
       if(current.id==="question-diagnosis"&&migrated.contentRevision!==completedQuestionDiagnosisRevision){
-        migrated.title="逐题诊断";
+        migrated.title="题目诊断";
         migrated.text=completedQuestionDiagnosisText;
         migrated.contentRevision=completedQuestionDiagnosisRevision;
+      }
+      if(current.id==="student-details"&&migrated.contentRevision!==completedStudentDiagnosisRevision){
+        migrated.title="学生诊断";
+        migrated.text=(definition&&definition.points?definition.points.join("\n"):migrated.text);
+        migrated.contentRevision=completedStudentDiagnosisRevision;
+      }
+      if(current.id==="page-path-actions"&&migrated.contentRevision!==completedPagePathActionsRevision){
+        migrated.title="页面路径与操作区";
+        migrated.text=(definition&&definition.points?definition.points.join("\n"):migrated.text);
+        migrated.contentRevision=completedPagePathActionsRevision;
       }
       return migrated;
     }).sort(function(a,b){return Number(a.number)-Number(b.number)});

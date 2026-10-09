@@ -37,16 +37,65 @@
   const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text)n.textContent=text;if(cls)n.className=cls;return n;};
   const button=(text,fn)=>{const n=el('button',text);n.type='button';n.onclick=fn;return n;};
   const ui=n=>n.setAttribute('data-pinmark-ui','');
-  const toolbar=$(cfg.toolbarSelector||'header')||document.body;
+  let toolbar=$(cfg.toolbarSelector||'#pinmarkReviewToolbar');
+  if(!toolbar){
+    toolbar=el('div');toolbar.id='pinmarkReviewToolbar';ui(toolbar);
+    toolbar.append(el('strong',cfg.requestName||document.title,'pinmark-review-title'));
+    document.body.append(toolbar);
+  }
+  toolbar.classList.add('pm-request-toolbar');
+  const requestTitle=toolbar.querySelector('.pinmark-review-title');
+  if(requestTitle)requestTitle.textContent=cfg.requestName||document.title;
+  const tabs=el('nav','','pm-request-tabs');ui(tabs);tabs.setAttribute('aria-label','需求说明');
+  const backgroundButton=$('#pinmarkCurrentProductButton')||button('需求背景',()=>{});
+  backgroundButton.textContent='需求背景';backgroundButton.className='pm-request-tab';
+  const analysisButton=button('需求分析',()=>showRequestTab('analysis'));
+  analysisButton.className='pm-request-tab';
+  tabs.append(backgroundButton,analysisButton);toolbar.append(tabs);
+  let requestModal=$('#pinmarkCurrentProductModal');
+  if(!requestModal){
+    requestModal=el('div','','pinmark-current-product-modal');requestModal.id='pinmarkCurrentProductModal';
+    requestModal.hidden=true;ui(requestModal);requestModal.setAttribute('role','dialog');requestModal.setAttribute('aria-modal','true');
+    requestModal.setAttribute('aria-labelledby','pinmarkCurrentProductTitle');
+    requestModal.innerHTML='<section class="pinmark-current-product-dialog"><header class="pinmark-current-product-head"><h2 class="pinmark-current-product-title" id="pinmarkCurrentProductTitle"></h2><button class="pinmark-current-product-close" id="pinmarkCurrentProductClose" type="button" aria-label="关闭需求说明">×</button></header><div class="pinmark-current-product-body"></div></section>';
+    document.body.append(requestModal);
+  }
+  const requestBody=requestModal.querySelector('.pinmark-current-product-body');
+  const backgroundContent=el('div','','pm-request-background');
+  backgroundContent.append(el('h3','当前产品现状'));
+  while(requestBody.firstChild)backgroundContent.append(requestBody.firstChild);
+  for(const source of cfg.backgroundImages||[]){
+    const img=el('img');img.src=source;img.alt='当前产品现状';img.className='pinmark-current-product-image';backgroundContent.append(img);
+  }
+  if(!backgroundContent.querySelector('img'))backgroundContent.append(el('p','暂无需求背景内容','pm-request-empty'));
+  const analysisContent=el('div','','pm-request-analysis');
+  analysisContent.append(el('p','暂无需求分析内容','pm-request-empty'));
+  let requestTab='';
+  function closeRequestTab(){
+    requestModal.hidden=true;document.body.classList.remove('pinmark-current-product-open');
+    backgroundButton.setAttribute('aria-pressed','false');analysisButton.setAttribute('aria-pressed','false');
+    (requestTab==='analysis'?analysisButton:backgroundButton).focus();requestTab='';
+  }
+  function showRequestTab(value){
+    if(requestTab===value&&!requestModal.hidden){closeRequestTab();return}
+    requestTab=value;requestBody.replaceChildren(value==='background'?backgroundContent:analysisContent);
+    requestModal.querySelector('#pinmarkCurrentProductTitle').textContent=value==='background'?'需求背景':'需求分析';
+    backgroundButton.setAttribute('aria-pressed',String(value==='background'));
+    analysisButton.setAttribute('aria-pressed',String(value==='analysis'));
+    requestModal.hidden=false;document.body.classList.add('pinmark-current-product-open');
+    requestModal.querySelector('#pinmarkCurrentProductClose').focus();
+  }
+  backgroundButton.onclick=()=>showRequestTab('background');
+  requestModal.querySelector('#pinmarkCurrentProductClose').onclick=closeRequestTab;
+  requestModal.addEventListener('click',event=>{if(event.target===requestModal)closeRequestTab()});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!requestModal.hidden)closeRequestTab()});
   const controls=el('span','','pm-controls');ui(controls);
   const existing=$(cfg.annotationToggleSelector||'');
-  const toggle=existing||button('隐藏标注',()=>setHidden(!hidden));ui(toggle);toggle.type='button';toggle.onclick=()=>setHidden(!hidden);
-  if(!existing)controls.append(toggle);
-  const reviewButton=button('评审记录',()=>setMode(mode==='review'?'':'review'));
-  const addButton=button('新增产品标注',()=>{setHidden(false);setMode(mode==='product'||mode==='reanchor'?'':'product')});
-  const saveFileButton=button('保存到 Demo',saveToDemo);
-  controls.append(reviewButton,addButton,saveFileButton);
-  const after=$(cfg.insertAfterSelector||'')||existing;if(after)after.after(controls);else toolbar.append(controls);
+  const toggle=existing||button('隐藏PRD内容',()=>setHidden(!hidden));ui(toggle);toggle.type='button';toggle.onclick=()=>setHidden(!hidden);
+  const reviewButton=button('评审记录',()=>{setHidden(false);setMode(mode==='review'?'':'review');notes.querySelector('.pm-review-list')?.scrollIntoView({block:'start',behavior:'smooth'})});
+  const addButton=button('新增PRD内容',()=>{setHidden(false);setMode(mode==='product'||mode==='reanchor'?'':'product')});
+  const saveFileButton=button('保存到demo',saveToDemo);
+  controls.append(addButton,toggle,saveFileButton,reviewButton);toolbar.append(controls);
   let idleStatus=embeddedSnapshot&&embeddedSnapshot===JSON.stringify(data)?'已写入当前 Demo':'已保存到当前浏览器';
   const status=el('span',loadError||idleStatus,'pm-status');status.setAttribute('role','status');controls.append(status);
   let notes=$(cfg.notesSelector||'');
@@ -81,11 +130,18 @@
   async function storeHandle(handle){
     try{const db=await openHandleDb();await new Promise((resolve,reject)=>{const request=db.transaction('handles','readwrite').objectStore('handles').put(handle,key);request.onsuccess=resolve;request.onerror=()=>reject(request.error);});}catch(_){}
   }
+  async function clearStoredHandle(){
+    try{const db=await openHandleDb();await new Promise((resolve,reject)=>{const request=db.transaction('handles','readwrite').objectStore('handles').delete(key);request.onsuccess=resolve;request.onerror=()=>reject(request.error);});}catch(_){}
+  }
   async function writableHandle(){
     let handle=await storedHandle();
     if(handle){
-      const options={mode:'readwrite'};
-      if(await handle.queryPermission(options)!=='granted'&&await handle.requestPermission(options)!=='granted')handle=null;
+      try{
+        const options={mode:'readwrite'};
+        if(await handle.queryPermission(options)!=='granted'&&await handle.requestPermission(options)!=='granted')handle=null;
+        if(handle)await handle.getFile();
+      }catch(_){handle=null;}
+      if(!handle)await clearStoredHandle();
     }
     if(!handle){
       if(!window.showOpenFilePicker)throw Error('当前浏览器不支持写回本地文件，请使用最新版 Chrome 打开此产品稿。');
@@ -101,7 +157,7 @@
       const handle=await writableHandle(),file=await handle.getFile(),source=await file.text();
       const start='<!-- PINMARK_DATA_START -->',end='<!-- PINMARK_DATA_END -->';
       const startIndex=source.indexOf(start),endIndex=source.indexOf(end,startIndex+start.length);
-      if(startIndex<0||endIndex<0||!source.includes(`pageKey:"${cfg.pageKey}"`))throw Error('请选择当前“班级作业学情-产品稿”目录中的 index.html。');
+      if(startIndex<0||endIndex<0||!source.includes(`pageKey:"${cfg.pageKey}"`))throw Error('请选择当前需求目录中的 index.html。');
       const encoded=encodeData(data);
       const block=`${start}\n<script id="pinmarkEmbeddedData" type="application/json" data-encoding="base64">${encoded}</script>\n${end}`;
       const updated=source.slice(0,startIndex)+block+source.slice(endIndex+end.length);
@@ -109,6 +165,7 @@
       if(embeddedNode)embeddedNode.textContent=encoded;embeddedSnapshot=JSON.stringify(data);idleStatus='已写入当前 Demo';status.textContent=idleStatus;
     }catch(error){
       if(error?.name==='AbortError')status.textContent=idleStatus;
+      else if(error?.name==='NotFoundError'){await clearStoredHandle();status.textContent='原文件位置已变化，请再次点击“保存到demo”并重新选择当前 index.html。';}
       else status.textContent=error?.message||'写入失败，请重试。';
     }finally{saveFileButton.disabled=false;saveFileButton.textContent=priorText;}
   }
@@ -148,8 +205,8 @@
     const target=$(record.selector,doc);if(!target||!target.getClientRects().length||win.getComputedStyle(target).visibility==='hidden')return;result={win,target};
   });return result;}
   function topPoint(win,x,y){while(win!==window){const frame=win.frameElement,b=frame.getBoundingClientRect(),sx=b.width/(frame.offsetWidth||b.width),sy=b.height/(frame.offsetHeight||b.height);x=b.left+(x+frame.clientLeft)*sx;y=b.top+(y+frame.clientTop)*sy;win=win.parent}return{x,y};}
-  function setMode(value){mode=value;reviewButton.textContent=mode==='review'?'结束评审':'评审记录';reviewButton.setAttribute('aria-pressed',String(mode==='review'));addButton.textContent=mode==='product'?'取消新增':mode==='reanchor'?'取消定位':'新增产品标注';addButton.setAttribute('aria-pressed',String(mode==='product'||mode==='reanchor'));status.textContent=mode?'点击页面选择标注位置；按 Esc 取消':idleStatus;if(!mode)close();refresh();}
-  function setHidden(value){hidden=value;toggle.textContent=hidden?'显示标注':'隐藏标注';toggle.setAttribute('aria-pressed',String(hidden));notes.hidden=hidden;notes.closest('.pm-layout')?.classList.toggle('pm-notes-hidden',hidden);cfg.onVisibilityChange?.(!hidden);renderNotes();refresh();}
+  function setMode(value){mode=value;reviewButton.textContent=mode==='review'?'结束评审':'评审记录';reviewButton.setAttribute('aria-pressed',String(mode==='review'));addButton.textContent=mode==='product'?'取消新增':mode==='reanchor'?'取消定位':'新增PRD内容';addButton.setAttribute('aria-pressed',String(mode==='product'||mode==='reanchor'));status.textContent=mode?'点击页面选择标注位置；按 Esc 取消':idleStatus;if(!mode)close();refresh();}
+  function setHidden(value){hidden=value;toggle.textContent=hidden?'显示PRD内容':'隐藏PRD内容';toggle.setAttribute('aria-pressed',String(hidden));notes.hidden=hidden;notes.closest('.pm-layout')?.classList.toggle('pm-notes-hidden',hidden);cfg.onVisibilityChange?.(!hidden);if(hidden&&mode)setMode('');renderNotes();refresh();}
   function select(kind,record){active={kind,id:record.id};renderNotes();refresh();[...notes.querySelectorAll('.pm-note')].find(n=>n.dataset.id===record.id&&n.dataset.kind===kind)?.scrollIntoView({block:'nearest',behavior:'smooth'});}
   async function focus(kind,record){
     const token=++focusToken;select(kind,record);
@@ -177,7 +234,7 @@
           renderNotes();
         });
         editToggle.setAttribute('aria-pressed',String(productEditing));
-        heading.append(el('h2','产品逻辑说明'),editToggle);section.append(heading);
+        heading.append(el('h2','PRD内容'),editToggle);section.append(heading);
       }else section.append(el('h2','评审记录'));
       if(kind==='product')section.append(el('p','点击页面数字查看对应说明；点击说明编号定位页面内容。','pm-intro'));
       if(!list(kind).length)section.append(el('p','暂无记录'));
@@ -233,5 +290,5 @@
   });}
   function getContexts(win){const values=[];while(true){values.unshift(context(win));if(win===window)return values;win=win.parent}}
   window.PinMarkReview={getSnapshot:()=>clone(data),saveToDemo,refresh,focus:(id,kind='product')=>{const r=list(kind).find(r=>r.id===id);if(r)return focus(kind,r)}};
-  renderNotes();refresh();setInterval(refresh,150);
+  setHidden(Boolean(cfg.initialHidden));refresh();setInterval(refresh,150);
 })();

@@ -31,3 +31,30 @@
 #pm-editor textarea{height:125px;resize:vertical}
 #pm-editor .pm-error{color:#aa3424;min-height:20px}
 @media(max-width:1000px){:root{--pm-panel-width:290px}.pm-panel{padding:14px}}
+/* Personal requirement toolbar: background / analysis / PRD actions. */
+:root{--pm-toolbar-bg:#edf6ff;--pm-toolbar-line:#d7e7f8;--pm-toolbar-ink:#274b73;--pm-toolbar-selected:#dcecff;--pm-toolbar-blue:#2478ed}
+#pinmarkReviewToolbar.pm-request-toolbar{position:fixed;inset:0 0 auto;z-index:2147483645;display:grid;grid-template-columns:minmax(220px,1fr) auto minmax(470px,1fr);align-items:center;gap:20px;height:64px;padding:0 24px;border-bottom:1px solid var(--pm-toolbar-line);background:var(--pm-toolbar-bg);box-shadow:0 1px 8px rgba(39,75,115,.04);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+#pinmarkReviewToolbar.pm-request-toolbar .pinmark-review-title{color:var(--pm-toolbar-ink);font-size:16px;font-weight:650;white-space:nowrap}
+#pinmarkReviewToolbar.pm-request-toolbar .pm-request-tabs{display:flex;align-items:center;justify-content:center;gap:8px}
+#pinmarkReviewToolbar.pm-request-toolbar .pm-controls{display:flex;justify-content:flex-end;gap:8px;flex-wrap:nowrap;margin:0}
+#pinmarkReviewToolbar.pm-request-toolbar button{min-height:36px;margin:0;padding:7px 12px;border:1px solid var(--pm-toolbar-line);border-radius:8px;background:rgba(255,255,255,.75);color:var(--pm-toolbar-ink);font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer}
+#pinmarkReviewToolbar.pm-request-toolbar .pm-request-tab{border-color:transparent;background:transparent;padding:8px 18px}
+#pinmarkReviewToolbar.pm-request-toolbar button:hover{background:var(--pm-toolbar-selected);color:var(--pm-toolbar-blue)}
+#pinmarkReviewToolbar.pm-request-toolbar .pm-controls>button{border-color:var(--pm-toolbar-line);color:var(--pm-toolbar-ink)}
+#pinmarkReviewToolbar.pm-request-toolbar button[aria-pressed=true]{border-color:#afcef6;background:var(--pm-toolbar-selected);color:var(--pm-toolbar-blue);box-shadow:none}
+#pinmarkReviewToolbar.pm-request-toolbar .pm-status{position:absolute;right:24px;bottom:1px;max-width:600px;color:#6b86a5;font-size:9px;line-height:11px;white-space:nowrap}
+.pm-request-toolbar~.pm-panel.pm-floating{top:64px}
+.pinmark-current-product-modal[hidden]{display:none!important}
+.pinmark-current-product-modal{position:fixed;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:32px;background:rgba(30,36,43,.48);backdrop-filter:blur(5px)}
+.pinmark-current-product-dialog{display:flex;width:min(92vw,1040px);max-height:90vh;overflow:hidden;flex-direction:column;border:1px solid var(--pm-toolbar-line);border-radius:18px;background:white;box-shadow:0 28px 90px rgba(23,31,41,.28)}
+.pinmark-current-product-head{display:flex;flex:0 0 60px;align-items:center;padding:0 18px 0 22px;border-bottom:1px solid var(--pm-toolbar-line);background:var(--pm-toolbar-bg)}
+.pinmark-current-product-title{margin:0;color:var(--pm-toolbar-ink);font-size:17px;font-weight:650}
+.pinmark-current-product-close{margin-left:auto!important}
+.pinmark-current-product-body{min-height:0;overflow:auto;padding:24px;background:#f7faff}
+.pinmark-current-product-image{display:block;width:100%;height:auto;margin:12px 0;border-radius:10px;background:white}
+.pm-request-background h3{margin:0 0 16px;color:var(--pm-toolbar-ink);font:600 15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.pm-request-empty{padding:48px 0;text-align:center;color:#8192a6;font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+body.pinmark-current-product-open{overflow:hidden}
+body.pm-stage-draft{padding-top:64px}
+body.pm-stage-draft:not(.pinmark-product-notes-hidden){padding-right:var(--pm-panel-width)}
+body.pm-stage-draft:not(.pinmark-product-notes-hidden) .page{width:calc(100% - 32px)}
